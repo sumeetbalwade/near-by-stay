@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://connect.facebook.net/en_GB/sdk.js?hash=c83d5959a237a7328fbdb8aed8472d14&amp;ua=modern_es6"
+        async="" crossorigin="anonymous"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-46MK"></script>
+    <script type="text/javascript" async=""
+        src="https://www.gstatic.com/recaptcha/releases/mrdLhN7MywkJAAbzddTIjTaM/recaptcha__en_gb.js"
+        crossorigin="anonymous"
+        integrity="sha384-gpA70IUypcWzEJ0Zli4Z4rXlJ1b3OFuimXQpQfKAUKB/6qjTWS6ETFASDTXM+uAj"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script>window.sherlock_firstbyte = window.performance && window.performance.timing ? window.performance.timing.responseStart : Number(new Date());</script>
+    <script>!function () { "use strict"; var n = window; const e = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", o = new RegExp(`^\\d{10}_[${e}]{16}$`); const t = /(?:^| )bev=(.*?)(?:;|$)/; let c = !1; function i() { if (c || "undefined" == typeof document) return null; c = !0; const n = (document.cookie || "").match(t); if (!n || 2 !== n.length) return null; const e = decodeURIComponent(n[1]); return function (n) { return o.test(n) }(e) ? e : null } !function () { try { if (n.bev = n.bev || i(), !n.bev) { const o = function () { const n = []; for (let o = 0; o < 16; o += 1)n.push(e[Math.floor(Math.random() * e.length)]); return `${Math.floor(Date.now() / 1e3)}_${n.join("")}` }(); !function (n) { const { hostname: e } = document.location, o = "." + e.slice(e.indexOf("airbnb.")), t = new Date; t.setDate(t.getDate() + 730), document.cookie = ["bev=" + encodeURIComponent(n), "expires=" + t.toUTCString(), "path=/", "domain=" + o, "secure"].join("; ") }(o), n.bev = o } } catch (n) { window.console && console.error("Could not set bev cookie:", n) } }() }();
+    </script>
+    <script>(function () {
+            var pgRequest = new XMLHttpRequest();
+            var diffStamp = Date.now().toString() + Math.random().toString().substring(2);
+            pgRequest.open('GET', '/pg_pixel?r=' + encodeURIComponent(document.referrer || '') + '&diff=' + diffStamp, true);
+            pgRequest.send();
+        })()</script>
+    <script>(function () { function a() { return "undefined" != typeof window && window.location && window.location.host ? window.location.host.replace(":", "-") : "unknown" } function b() { return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, a => { const b = 0 | 16 * parseFloat(`0.${(Math.random() + "").replace("0.", "")}${new Date().getTime()}`), c = "x" === a ? b : 8 | 3 & b; return c.toString(16) }) } function c() { var a, b, c, d; return null !== (a = null === (b = navigator) || void 0 === b || null === (c = b.serviceWorker) || void 0 === c || null === (d = c.controller) || void 0 === d ? void 0 : d.scriptURL) && void 0 !== a ? a : "none" } window._bufferedErrors = []; const d = window.onerror; window.onerror = (a, b, c, e, f) => { d && d.call(window, a, b, c, e, f), window._bufferedErrors && window._bufferedErrors.push([a, b, c, e, f]) }, window.addEventListener("load", () => { if (!window._errorReportingInitialized) { const e = window._bufferedErrors || []; if (window.fetch && 0 < e.length) { var d; window.fetch("/tracking/jitney/logging/messages", { body: JSON.stringify([{ trackingjs_logging_version: "0.6.0", uuid: b(), event_name: "jitney_universal_error", schema: "com.airbnb.jitney.event.logging.Universal:UniversalErrorEvent:1.0.0", event_data: { context: { timestamp: Date.now(), source: "hyperloop", platform: "wide-web", user_agent: null === (d = navigator) || void 0 === d ? void 0 : d.userAgent, extra_data: { serviceworker: c(), host: a() } }, event_name: "jitney_universal_error", schema: "com.airbnb.jitney.event.logging.Universal:UniversalErrorEvent:1.0.0", message: "UnhandledBufferedError", level: "fatal", exceptions: e.map(a => ({ message: a[0], type: "UnhandledBufferedError", stacktrace: { frames: [{ column: a[3] || 0, filename: a[1] || "[unknown]", function_name: "[unknown]", line: a[2] || 0 }] } })) } }]), method: "POST" }) } } }) })();</script>
+    <script>
+        // FID init code.
+        (function (a, b) { function c(a) { l.push(a), f() } function d(a, b) { i || (i = b, j = a, k = new Date, f()) } function e() { i && (i = null, j = null, k = null) } function f() { 0 <= j && j < k - n && (l.forEach(a => { a(j, i) }), l = []) } function g(c, e) { function f() { d(c, e), h() } function g() { h() } function h() { b(o, f, m), b(p, g, m) } a(o, f, m), a(p, g, m) } function h(a) { if (a.cancelable) { const b = 1e12 < a.timeStamp, c = b ? new Date : performance.now(), e = c - a.timeStamp; "pointerdown" === a.type ? g(e, a) : d(e, a) } } let i, j, k, l = []; const m = { passive: !0, capture: !0 }, n = new Date, o = "pointerup", p = "pointercancel"; (function (a) { ["click", "mousedown", "keydown", "touchstart", "pointerdown"].forEach(b => { a(b, h, m) }) })(a), self.perfMetrics = self.perfMetrics || {}, self.perfMetrics.onFirstInputDelay = c, self.perfMetrics.clearFirstInputDelay = e })(addEventListener, removeEventListener);
+        // FCP init code.
+        (function (a) { function b() { return !!document.body && null !== document.createNodeIterator(document.body, NodeFilter.SHOW_TEXT, function (a) { return !!a && /[^\s]/.test(a.nodeValue) && "SCRIPT" !== a.parentNode.tagName && "STYLE" !== a.parentNode.tagName && 0 < a.parentNode.offsetHeight }, !1).nextNode() } function c() { return null !== document.querySelector("input[placeholder]") } function d() { return b() || c() ? void a(function () { const a = performance.now(); f ? f(a) : g = a, performance.measure && performance.measure("TTFCP") }) : void a(d) } function e(a) { g ? a(g) : f = a } let f, g; a(d), self.perfMetrics = self.perfMetrics || {}, self.perfMetrics.onFirstContentfulPaint = e })(requestAnimationFrame);
+        // TTFMP Polyfill code.
+        (function (a) { function b() { const c = document.getElementById(i); h = 0, c ? g === c ? e = a(b) : "IMG" !== c.tagName || c.complete ? a(function () { const a = performance.now(); g = c, f ? f(a) : h = a, performance.measure && performance.measure("TTFMP") }) : e = a(b) : e = a(b) } function c(a) { h ? a(h) : f = a } function d() { cancelAnimationFrame(e) } let e, f, g, h; const i = "FMP-target"; e = a(b), self.perfMetrics = self.perfMetrics || {}, self.perfMetrics.onFirstMeaningfulPaint = c, self.perfMetrics.startSearchingForFirstMeaningfulPaint = function () { g = document.getElementById(i), b() }, self.perfMetrics.stopSearchingForFirstMeaningfulPaint = d })(requestAnimationFrame);
+    </script>
+    <meta charset="utf-8">
+    <meta name="locale" content="en-IN">
+    <meta name="google" content="notranslate">
+    <meta id="csrf-param-meta-tag" name="csrf-param" content="authenticity_token">
+    <meta id="csrf-token-meta-tag" name="csrf-token" content="null">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta id="english-canonical-url" content="">
+    <meta name="twitter:widgets:csp" content="on">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Airbnb">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Airbnb">
+    <meta name="apple-mobile-web-app-title" content="Airbnb">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/?utm_source=homescreen">
+    <link rel="apple-touch-icon"
+        href="https://a0.muscache.com/airbnb/static/icons/apple-touch-icon-76x76-3b313d93b1b5823293524b9764352ac9.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="https://a0.muscache.com/airbnb/static/icons/apple-touch-icon-76x76-3b313d93b1b5823293524b9764352ac9.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="https://a0.muscache.com/airbnb/static/icons/apple-touch-icon-120x120-52b1adb4fe3a8f825fc4b143de12ea4b.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://a0.muscache.com/airbnb/static/icons/apple-touch-icon-152x152-7b7c6444b63d8b6ebad9dae7169e5ed6.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://a0.muscache.com/airbnb/static/icons/apple-touch-icon-180x180-bcbe0e3960cd084eb8eaf1353cf3c730.png">
+    <link rel="icon" sizes="192x192"
+        href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png">
+    <link rel="shortcut icon" sizes="76x76" type="image/x-icon"
+        href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
+    <link rel="mask-icon" href="https://a0.muscache.com/airbnb/static/icons/airbnb-0611901eac33ccfa5e93d793a2e21f09.svg"
+        color="#FF5A5F">
+    <script id="data-is-async-scripts" data-is-async-scripts="true" type="application/json">false</script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/runtime-c71bdc90.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/shims_post_modules-367d670d.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/shims_pre_modules-e5f432c9.js" nomodule="" defer=""
+        crossorigin="anonymous"></script>
+    <script crossorigin="anonymous" defer=""></script>
+    <script
+        src="https://a0.muscache.com/airbnb/static/packages/core-guest-loop/phrases_manifest/en-IN/core-guest-spa/hyperloop/index-e41135c40c.js"
+        crossorigin="anonymous" defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/moment-f651b112.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/react-be8bdf6e.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/3a5d-2c6b8c6e.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/68c1-c3673fce.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/cfb1-e8de9c0a.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/dae3-87f8d26e.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/3097-8974812a.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/8f2b-fdb73573.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/d981-358d3634.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/325e-72c57f5a.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/initializers-8c3dc149.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/common-5eb0f013.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/d54e-6f5ef2c1.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/Corgi-App-e469b229.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/22fe-dc66a871.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/df3e-7a127ae0.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/e1a6-d99c9bf7.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/V3SearchContainer-a7b12115.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/lodash-2e303f27.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/5f89-15f0dcdc.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/f4d5-2503b4ed.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/375c-6c8004f7.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/67a2-1de2c36c.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/1614-9d6d03e2.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/9ee0-2aaa0230.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/8b75-593d267a.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/6297-b4d59c78.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/bea9-37554dd8.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/0be7-398ed04c.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/34b05-f14d9019.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/6695-0d665848.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/1a32-bc150615.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/Explore-SearchContainer_async-1287ceb4.js"
+        crossorigin="anonymous" defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/aphrodite-f2ecca08.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/1c58-1d6248eb.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/2986-47dbddcc.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/aa9d-f7716fa9.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/b672-62c7d1ae.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/979f-8903b76b.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/d2a5-db52f6da.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/93ef-a049a15a.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/40c9-e61f20ea.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/94b2-c23a7b1b.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/b338-edc4a9b7.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/6285-6415d05a.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/f4f6-b81ffaf1.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/26fa-11b59388.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/e645-c82d61bf.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/f2f8-f271777d.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/8c24-e9388243.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/1f6d-a3cd7581.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/f31d-9fcb6b8c.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/d13b-0b33fb72.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/b3c3-b38d4367.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/ce72-af2ff947.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/8405-80d21631.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/6eff-a7a86988.js" crossorigin="anonymous"
+        defer=""></script>
+    <script src="https://a0.muscache.com/airbnb/static/packages/core-guest-spa/hyperloop/index-0cc16b82.js"
+        crossorigin="anonymous" defer=""></script>
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/1940-55b5b520.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/niobe-minimalist-client-253db62f.js"
+        as="script" crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/f8fc-4b9b0b89.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/niobe-apollo-client-02a52604.js"
+        as="script" crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/Header-Query-8d7f11c5.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/Explore-V3Prepare-6253ce7b.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/605e-ee2c314b.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/2824-2a4ed7ea.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/b45b-9de3acf2.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/34b0-42574605.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/7a36-19017208.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/8dd3-1f6af06e.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/427f-6042c511.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/ca3d-9e83fc12.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/b2f8-3e3b14ff.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/697e-053f2cd8.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/995f-f5bb2f9a.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/simple-nav-header-d52ab310.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch"
+        href="https://a0.muscache.com/airbnb/static/packages/explore-original_storefronts-current-plugins_FramedHeaderSection-b636bda3.js"
+        as="script" crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/7254-13b78d79.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/d235-3c788e85.js" as="script"
+        crossorigin="anonymous">
+    <link rel="prefetch" href="https://a0.muscache.com/airbnb/static/packages/simple-nav-Footer-bf80c72e.js" as="script"
+        crossorigin="anonymous">
+    <meta property="fb:app_id" content="138566025676">
+    <meta property="og:site_name" content="Airbnb">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://www.airbnb.co.in">
+    <meta property="og:title" content="Holiday Lets, Homes, Experiences &amp; Places - Airbnb">
+    <meta property="og:description"
+        content="Unforgettable trips start with Airbnb. Find adventures nearby or in faraway places and access unique homes, experiences, and places around the world.">
+    <meta property="og:type" content="website">
+    <meta property="og:image"
+        content="https://a0.muscache.com/airbnb/static/logos/trips-og-1280x630-9de9c338cc3fd9b5663fb80be0cbe8c2.jpg">
+    <link rel="alternate" href="android-app://com.airbnb.android/airbnb/home">
+    <script
+        type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://www.airbnb.co.in/","potentialAction":{"@type":"SearchAction","target":"https://www.airbnb.co.in/s/all?query={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <meta name="description"
+        content="Unforgettable trips start with Airbnb. Find adventures nearby or in faraway places and access unique homes, experiences, and places around the world.">
+    <link href="https://a0.muscache.com/airbnb/static/packages/dls/dls-lite_cereal-d9f6fdb2a0dd4a18c37f8ee01de8ec3d.css"
+        rel="stylesheet" type="text/css" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all">
+    <title>Holiday Rentals, Homes, Hotels, Experiences &amp; More – Airbnb</title>
+    <link rel="canonical" href="https://www.airbnb.co.in/">
+    <link rel="alternate" hreflang="en" href="https://www.airbnb.com/">
+    <link rel="alternate" hreflang="de" href="https://www.airbnb.de/">
+    <link rel="alternate" hreflang="it" href="https://www.airbnb.it/">
+    <link rel="alternate" hreflang="es-ES" href="https://www.airbnb.es/">
+    <link rel="alternate" hreflang="fr" href="https://www.airbnb.fr/">
+    <link rel="alternate" hreflang="pt" href="https://www.airbnb.com.br/">
+    <link rel="alternate" hreflang="da" href="https://www.airbnb.dk/">
+    <link rel="alternate" hreflang="en-GB" href="https://www.airbnb.co.uk/">
+    <link rel="alternate" hreflang="ru" href="https://www.airbnb.ru/">
+    <link rel="alternate" hreflang="pl" href="https://www.airbnb.pl/">
+    <link rel="alternate" hreflang="ko" href="https://www.airbnb.co.kr/">
+    <link rel="alternate" hreflang="cs" href="https://www.airbnb.cz/">
+    <link rel="alternate" hreflang="hu" href="https://www.airbnb.hu/">
+    <link rel="alternate" hreflang="de-AT" href="https://www.airbnb.at/">
+    <link rel="alternate" hreflang="pt-PT" href="https://www.airbnb.pt/">
+    <link rel="alternate" hreflang="el" href="https://www.airbnb.gr/">
+    <link rel="alternate" hreflang="tr" href="https://www.airbnb.com.tr/">
+    <link rel="alternate" hreflang="nl" href="https://www.airbnb.nl/">
+    <link rel="alternate" hreflang="sv" href="https://www.airbnb.se/">
+    <link rel="alternate" hreflang="zh-TW" href="https://www.airbnb.com.tw/">
+    <link rel="alternate" hreflang="zh-HK" href="https://www.airbnb.com.hk/">
+    <link rel="alternate" hreflang="en-SG" href="https://www.airbnb.com.sg/">
+    <link rel="alternate" hreflang="id" href="https://www.airbnb.co.id/">
+    <link rel="alternate" hreflang="ms" href="https://www.airbnb.com.my/">
+    <link rel="alternate" hreflang="en-AU" href="https://www.airbnb.com.au/">
+    <link rel="alternate" hreflang="ja" href="https://www.airbnb.jp/">
+    <link rel="alternate" hreflang="is" href="https://www.airbnb.is/">
+    <link rel="alternate" hreflang="no" href="https://www.airbnb.no/">
+    <link rel="alternate" hreflang="de-CH" href="https://www.airbnb.ch/">
+    <link rel="alternate" hreflang="fr-CH" href="https://fr.airbnb.ch/">
+    <link rel="alternate" hreflang="it-CH" href="https://it.airbnb.ch/">
+    <link rel="alternate" hreflang="en-NZ" href="https://www.airbnb.co.nz/">
+    <link rel="alternate" hreflang="en-CA" href="https://www.airbnb.ca/">
+    <link rel="alternate" hreflang="fr-CA" href="https://fr.airbnb.ca/">
+    <link rel="alternate" hreflang="nl-BE" href="https://www.airbnb.be/">
+    <link rel="alternate" hreflang="fr-BE" href="https://fr.airbnb.be/">
+    <link rel="alternate" hreflang="fi" href="https://www.airbnb.fi/">
+    <link rel="alternate" hreflang="en-IE" href="https://www.airbnb.ie/">
+    <link rel="alternate" hreflang="ga-IE" href="https://ga.airbnb.ie/">
+    <link rel="alternate" hreflang="ca" href="https://www.airbnb.cat/">
+    <link rel="alternate" hreflang="en-IN" href="https://www.airbnb.co.in/">
+    <link rel="alternate" hreflang="hi-IN" href="https://hi.airbnb.co.in/">
+    <link rel="alternate" hreflang="es-MX" href="https://www.airbnb.mx/">
+    <link rel="alternate" hreflang="es-CL" href="https://www.airbnb.cl/">
+    <link rel="alternate" hreflang="es-CR" href="https://www.airbnb.co.cr/">
+    <link rel="alternate" hreflang="es-VE" href="https://www.airbnb.co.ve/">
+    <link rel="alternate" hreflang="es-AR" href="https://www.airbnb.com.ar/">
+    <link rel="alternate" hreflang="es-BO" href="https://www.airbnb.com.bo/">
+    <link rel="alternate" hreflang="es-BZ" href="https://www.airbnb.com.bz/">
+    <link rel="alternate" hreflang="es-CO" href="https://www.airbnb.com.co/">
+    <link rel="alternate" hreflang="es-EC" href="https://www.airbnb.com.ec/">
+    <link rel="alternate" hreflang="es-GT" href="https://www.airbnb.com.gt/">
+    <link rel="alternate" hreflang="es-HN" href="https://www.airbnb.com.hn/">
+    <link rel="alternate" hreflang="es-NI" href="https://www.airbnb.com.ni/">
+    <link rel="alternate" hreflang="es-PA" href="https://www.airbnb.com.pa/">
+    <link rel="alternate" hreflang="es-PE" href="https://www.airbnb.com.pe/">
+    <link rel="alternate" hreflang="es-PY" href="https://www.airbnb.com.py/">
+    <link rel="alternate" hreflang="es-SV" href="https://www.airbnb.com.sv/">
+    <link rel="alternate" hreflang="en-MT" href="https://www.airbnb.com.mt/">
+    <link rel="alternate" hreflang="mt-MT" href="https://mt.airbnb.com.mt/">
+    <link rel="alternate" hreflang="en-GY" href="https://www.airbnb.gy/">
+    <link rel="alternate" hreflang="en-AE" href="https://www.airbnb.ae/">
+    <link rel="alternate" hreflang="tl" href="https://www.airbnb.com.ph/">
+    <link rel="alternate" hreflang="vi" href="https://www.airbnb.com.vn/">
+    <link rel="alternate" hreflang="en-ZA" href="https://www.airbnb.co.za/">
+    <link rel="alternate" hreflang="xh-ZA" href="https://xh.airbnb.co.za/">
+    <link rel="alternate" hreflang="zu-ZA" href="https://zu.airbnb.co.za/">
+    <link rel="alternate" hreflang="uk" href="https://www.airbnb.com.ua/">
+    <link rel="alternate" hreflang="hy" href="https://www.airbnb.am/">
+    <link rel="alternate" hreflang="az" href="https://www.airbnb.az/">
+    <link rel="alternate" hreflang="bs" href="https://www.airbnb.ba/">
+    <link rel="alternate" hreflang="et" href="https://www.airbnb.com.ee/">
+    <link rel="alternate" hreflang="ro" href="https://www.airbnb.com.ro/">
+    <link rel="alternate" hreflang="lt" href="https://www.airbnb.lt/">
+    <link rel="alternate" hreflang="lv" href="https://www.airbnb.lv/">
+    <link rel="alternate" hreflang="sr-ME" href="https://www.airbnb.me/">
+    <link rel="alternate" hreflang="sr" href="https://www.airbnb.rs/">
+    <link rel="alternate" hreflang="sl" href="https://www.airbnb.si/">
+    <link rel="alternate" hreflang="es" href="https://es.airbnb.com/">
+    <link rel="alternate" hreflang="hr" href="https://hr.airbnb.com/">
+    <link rel="alternate" hreflang="sw" href="https://sw.airbnb.com/">
+    <link rel="alternate" hreflang="mt" href="https://mt.airbnb.com/">
+    <link rel="alternate" hreflang="sq" href="https://sq.airbnb.com/">
+    <link rel="alternate" hreflang="sk" href="https://sk.airbnb.com/">
+    <link rel="alternate" hreflang="xh" href="https://xh.airbnb.com/">
+    <link rel="alternate" hreflang="zu" href="https://zu.airbnb.com/">
+    <link rel="alternate" hreflang="bg" href="https://bg.airbnb.com/">
+    <link rel="alternate" hreflang="mk" href="https://mk.airbnb.com/">
+    <link rel="alternate" hreflang="he" href="https://he.airbnb.com/">
+    <link rel="alternate" hreflang="ar" href="https://ar.airbnb.com/">
+    <link rel="alternate" hreflang="th" href="https://th.airbnb.com/">
+    <link rel="alternate" hreflang="ka" href="https://ka.airbnb.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Holiday Lets, Homes, Experiences &amp; Places - Airbnb">
+    <meta name="twitter:site" content="@airbnb_in">
+    <meta name="twitter:app:name:iphone" content="Airbnb">
+    <meta name="twitter:app:name:ipad" content="Airbnb">
+    <meta name="twitter:app:name:googleplay" content="Airbnb">
+    <meta name="twitter:app:id:iphone" content="401626263">
+    <meta name="twitter:app:id:ipad" content="401626263">
+    <meta name="twitter:app:id:googleplay" content="com.airbnb.android">
+    <meta name="twitter:url" content="https://www.airbnb.co.in">
+    <meta name="twitter:app:url:iphone" content="airbnb://">
+    <meta name="twitter:app:url:ipad" content="airbnb://">
+    <meta name="twitter:app:url:googleplay" content="airbnb://">
+    <meta name="twitter:description"
+        content="Unforgettable trips start with Airbnb. Find adventures nearby or in faraway places and access unique homes, experiences, and places around the world.">
+    <meta name="twitter:image" content="">
+    <link rel="stylesheet" type="text/css" href="https://a0.muscache.com/airbnb/static/packages/common-f0706e06.css"
+        crossorigin="anonymous">
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/Header-Query-8d7f11c5.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/Explore-V3Prepare-6253ce7b.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/1940-55b5b520.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/niobe-minimalist-client-253db62f.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/f8fc-4b9b0b89.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/niobe-apollo-client-02a52604.js"
+        crossorigin="anonymous"></script>
+    <script>(function () {
+            // injected DOM script is not a content script anymore,
+            // it can modify objects and functions of the page
+            var _pushState = history.pushState;
+            history.pushState = function (state, title, url) {
+                _pushState.call(this, state, title, url);
+                window.dispatchEvent(
+                    new CustomEvent('state-changed', { detail: url })
+                );
+            };
+            // repeat the above for replaceState too
+        })();</script>
+    <script>(function () {
+            // injected DOM script is not a content script anymore,
+            // it can modify objects and functions of the page
+            var _pushState = history.pushState;
+            history.pushState = function (state, title, url) {
+                _pushState.call(this, state, title, url);
+                window.dispatchEvent(
+                    new CustomEvent('state-changed', { detail: url })
+                );
+            };
+            // repeat the above for replaceState too
+        })();</script>
+    <script>(function () {
+            // injected DOM script is not a content script anymore,
+            // it can modify objects and functions of the page
+            var _pushState = history.pushState;
+            history.pushState = function (state, title, url) {
+                _pushState.call(this, state, title, url);
+                window.dispatchEvent(
+                    new CustomEvent('state-changed', { detail: url })
+                );
+            };
+            // repeat the above for replaceState too
+        })();</script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/onload-fraud-5f905d62.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/onload-recaptcha-919caf88.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/onload-conversions-b797195a.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/onload-yahoo-japan-f0386622.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/605e-ee2c314b.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/2824-2a4ed7ea.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/b45b-9de3acf2.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/34b0-42574605.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/7a36-19017208.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/8dd3-1f6af06e.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/427f-6042c511.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/ca3d-9e83fc12.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/b2f8-3e3b14ff.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/697e-053f2cd8.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/995f-f5bb2f9a.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/simple-nav-header-d52ab310.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8"
+        src="https://a0.muscache.com/airbnb/static/packages/explore-original_storefronts-current-plugins_FramedHeaderSection-b636bda3.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/7254-13b78d79.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/d235-3c788e85.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/simple-nav-Footer-bf80c72e.js"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" async=""
+        src="https://www.google.com/recaptcha/api.js?render=6LflNKsUAAAAAJZAn48kK7mF-KMioLD3aLZm0thD&amp;logging=true"></script>
+    <script type="text/javascript" async="" src="https://ss.musthird.com/s.js"></script>
+    <style type="text/css"></style>
+    <link href="chrome-extension://ojplmecpdpgccookcobabopnaifgidhf/style.css" type="text/css" rel="stylesheet">
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/facebookAutoLogin-20ac9541.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/fieldGuideRender-85bb7639.js"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" async="" src="https://connect.facebook.net/en_GB/sdk.js"></script>
+    <style type="text/css"
+        data-fbcssmodules="css:fb.css.basecss:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">
+        .fb_hidden {
+            position: absolute;
+            top: -10000px;
+            z-index: 10001
+        }
+
+        .fb_reposition {
+            overflow: hidden;
+            position: relative
+        }
+
+        .fb_invisible {
+            display: none
+        }
+
+        .fb_reset {
+            background: none;
+            border: 0;
+            border-spacing: 0;
+            color: #000;
+            cursor: auto;
+            direction: ltr;
+            font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+            font-size: 11px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            text-align: left;
+            text-decoration: none;
+            text-indent: 0;
+            text-shadow: none;
+            text-transform: none;
+            visibility: visible;
+            white-space: normal;
+            word-spacing: normal
+        }
+
+        .fb_reset>div {
+            overflow: hidden
+        }
+
+        @keyframes fb_transform {
+            from {
+                opacity: 0;
+                transform: scale(.95)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        .fb_animate {
+            animation: fb_transform .3s forwards
+        }
+
+        .fb_dialog {
+            background: rgba(82, 82, 82, .7);
+            position: absolute;
+            top: -10000px;
+            z-index: 10001
+        }
+
+        .fb_dialog_advanced {
+            border-radius: 8px;
+            padding: 10px
+        }
+
+        .fb_dialog_content {
+            background: #fff;
+            color: #373737
+        }
+
+        .fb_dialog_close_icon {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+            cursor: pointer;
+            display: block;
+            height: 15px;
+            position: absolute;
+            right: 18px;
+            top: 17px;
+            width: 15px
+        }
+
+        .fb_dialog_mobile .fb_dialog_close_icon {
+            left: 5px;
+            right: auto;
+            top: 5px
+        }
+
+        .fb_dialog_padding {
+            background-color: transparent;
+            position: absolute;
+            width: 1px;
+            z-index: -1
+        }
+
+        .fb_dialog_close_icon:hover {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+        }
+
+        .fb_dialog_close_icon:active {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+        }
+
+        .fb_dialog_iframe {
+            line-height: 0
+        }
+
+        .fb_dialog_content .dialog_title {
+            background: #6d84b4;
+            border: 1px solid #365899;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0
+        }
+
+        .fb_dialog_content .dialog_title>span {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+            float: left;
+            padding: 5px 0 7px 26px
+        }
+
+        body.fb_hidden {
+            height: 100%;
+            left: 0;
+            margin: 0;
+            overflow: visible;
+            position: absolute;
+            top: -10000px;
+            transform: none;
+            width: 100%
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+            min-height: 100%;
+            min-width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 10001
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered {
+            background: none;
+            height: auto;
+            min-height: initial;
+            min-width: initial;
+            width: auto
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+            width: 100%
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+            background: none
+        }
+
+        .loading.centered #fb_dialog_loader_close {
+            clear: both;
+            color: #fff;
+            display: block;
+            font-size: 18px;
+            padding-top: 20px
+        }
+
+        #fb-root #fb_dialog_ipad_overlay {
+            background: rgba(0, 0, 0, .4);
+            bottom: 0;
+            left: 0;
+            min-height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 10000
+        }
+
+        #fb-root #fb_dialog_ipad_overlay.hidden {
+            display: none
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading iframe {
+            visibility: hidden
+        }
+
+        .fb_dialog_mobile .fb_dialog_iframe {
+            position: sticky;
+            top: 0
+        }
+
+        .fb_dialog_content .dialog_header {
+            background: linear-gradient(from(#738aba), to(#2c4987));
+            border-bottom: 1px solid;
+            border-color: #043b87;
+            box-shadow: white 0 1px 1px -1px inset;
+            color: #fff;
+            font: bold 14px Helvetica, sans-serif;
+            text-overflow: ellipsis;
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+            vertical-align: middle;
+            white-space: nowrap
+        }
+
+        .fb_dialog_content .dialog_header table {
+            height: 43px;
+            width: 100%
+        }
+
+        .fb_dialog_content .dialog_header td.header_left {
+            font-size: 12px;
+            padding-left: 5px;
+            vertical-align: middle;
+            width: 60px
+        }
+
+        .fb_dialog_content .dialog_header td.header_right {
+            font-size: 12px;
+            padding-right: 5px;
+            vertical-align: middle;
+            width: 60px
+        }
+
+        .fb_dialog_content .touchable_button {
+            background: linear-gradient(from(#4267B2), to(#2a4887));
+            background-clip: padding-box;
+            border: 1px solid #29487d;
+            border-radius: 3px;
+            display: inline-block;
+            line-height: 18px;
+            margin-top: 3px;
+            max-width: 85px;
+            padding: 4px 12px;
+            position: relative
+        }
+
+        .fb_dialog_content .dialog_header .touchable_button input {
+            background: none;
+            border: none;
+            color: #fff;
+            font: bold 12px Helvetica, sans-serif;
+            margin: 2px -12px;
+            padding: 2px 6px 3px 6px;
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+        }
+
+        .fb_dialog_content .dialog_header .header_center {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+            vertical-align: middle
+        }
+
+        .fb_dialog_content .dialog_content {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+            border: 1px solid #4a4a4a;
+            border-bottom: 0;
+            border-top: 0;
+            height: 150px
+        }
+
+        .fb_dialog_content .dialog_footer {
+            background: #f5f6f7;
+            border: 1px solid #4a4a4a;
+            border-top-color: #ccc;
+            height: 40px
+        }
+
+        #fb_dialog_loader_close {
+            float: left
+        }
+
+        .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+            visibility: hidden
+        }
+
+        #fb_dialog_loader_spinner {
+            animation: rotateSpinner 1.2s linear infinite;
+            background-color: transparent;
+            background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            height: 24px;
+            width: 24px
+        }
+
+        @keyframes rotateSpinner {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        .fb_iframe_widget {
+            display: inline-block;
+            position: relative
+        }
+
+        .fb_iframe_widget span {
+            display: inline-block;
+            position: relative;
+            text-align: justify
+        }
+
+        .fb_iframe_widget iframe {
+            position: absolute
+        }
+
+        .fb_iframe_widget_fluid_desktop,
+        .fb_iframe_widget_fluid_desktop span,
+        .fb_iframe_widget_fluid_desktop iframe {
+            max-width: 100%
+        }
+
+        .fb_iframe_widget_fluid_desktop iframe {
+            min-width: 220px;
+            position: relative
+        }
+
+        .fb_iframe_widget_lift {
+            z-index: 1
+        }
+
+        .fb_iframe_widget_fluid {
+            display: inline
+        }
+
+        .fb_iframe_widget_fluid span {
+            width: 100%
+        }
+
+        .fb_mpn_mobile_landing_page_slide_out {
+            animation-duration: 200ms;
+            animation-name: fb_mpn_landing_page_slide_out;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_landing_page_slide_out_from_left {
+            animation-duration: 200ms;
+            animation-name: fb_mpn_landing_page_slide_out_from_left;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_landing_page_slide_up {
+            animation-duration: 500ms;
+            animation-name: fb_mpn_landing_page_slide_up;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_bounce_in {
+            animation-duration: 300ms;
+            animation-name: fb_mpn_bounce_in;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_bounce_out {
+            animation-duration: 300ms;
+            animation-name: fb_mpn_bounce_out;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_bounce_out_v2 {
+            animation-duration: 300ms;
+            animation-name: fb_mpn_fade_out;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bounce_in_v2 {
+            animation-duration: 300ms;
+            animation-name: fb_bounce_in_v2;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bounce_in_from_left {
+            animation-duration: 300ms;
+            animation-name: fb_bounce_in_from_left;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bounce_out_v2 {
+            animation-duration: 300ms;
+            animation-name: fb_bounce_out_v2;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bounce_out_from_left {
+            animation-duration: 300ms;
+            animation-name: fb_bounce_out_from_left;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bubble_animated_no_badge {
+            box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+            transition: box-shadow 150ms linear
+        }
+
+        .fb_customer_chat_bubble_animated_no_badge:hover {
+            box-shadow: 0 5px 24px rgba(0, 0, 0, .3)
+        }
+
+        .fb_customer_chat_bubble_animated_with_badge {
+            box-shadow: -5px 4px 14px rgba(0, 0, 0, .15);
+            transition: box-shadow 150ms linear
+        }
+
+        .fb_customer_chat_bubble_animated_with_badge:hover {
+            box-shadow: -5px 8px 24px rgba(0, 0, 0, .2)
+        }
+
+        .fb_invisible_flow {
+            display: inherit;
+            height: 0;
+            overflow-x: hidden;
+            width: 0
+        }
+
+        .fb_new_ui_mobile_overlay_active {
+            overflow: hidden
+        }
+
+        @keyframes fb_mpn_landing_page_slide_in {
+            0% {
+                border-radius: 50%;
+                margin: 0 24px;
+                width: 60px
+            }
+
+            40% {
+                border-radius: 18px
+            }
+
+            100% {
+                margin: 0 12px;
+                width: 100% - 24px
+            }
+        }
+
+        @keyframes fb_mpn_landing_page_slide_in_from_left {
+            0% {
+                border-radius: 50%;
+                left: 12px;
+                margin: 0 24px;
+                width: 60px
+            }
+
+            40% {
+                border-radius: 18px
+            }
+
+            100% {
+                left: 12px;
+                margin: 0 12px;
+                width: 100% - 24px
+            }
+        }
+
+        @keyframes fb_mpn_landing_page_slide_out {
+            0% {
+                margin: 0 12px;
+                width: 100% - 24px
+            }
+
+            60% {
+                border-radius: 18px
+            }
+
+            100% {
+                border-radius: 50%;
+                margin: 0 24px;
+                width: 60px
+            }
+        }
+
+        @keyframes fb_mpn_landing_page_slide_out_from_left {
+            0% {
+                left: 12px;
+                width: 100% - 24px
+            }
+
+            60% {
+                border-radius: 18px
+            }
+
+            100% {
+                border-radius: 50%;
+                left: 12px;
+                width: 60px
+            }
+        }
+
+        @keyframes fb_mpn_landing_page_slide_up {
+            0% {
+                bottom: 0;
+                opacity: 0
+            }
+
+            100% {
+                bottom: 24px;
+                opacity: 1
+            }
+        }
+
+        @keyframes fb_mpn_bounce_in {
+            0% {
+                opacity: .5;
+                top: 100%
+            }
+
+            100% {
+                opacity: 1;
+                top: 0
+            }
+        }
+
+        @keyframes fb_mpn_fade_out {
+            0% {
+                bottom: 30px;
+                opacity: 1
+            }
+
+            100% {
+                bottom: 0;
+                opacity: 0
+            }
+        }
+
+        @keyframes fb_mpn_bounce_out {
+            0% {
+                opacity: 1;
+                top: 0
+            }
+
+            100% {
+                opacity: .5;
+                top: 100%
+            }
+        }
+
+        @keyframes fb_bounce_in_v2 {
+            0% {
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: bottom right
+            }
+
+            50% {
+                transform: scale(1.03, 1.03);
+                transform-origin: bottom right
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1, 1);
+                transform-origin: bottom right
+            }
+        }
+
+        @keyframes fb_bounce_in_from_left {
+            0% {
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: bottom left
+            }
+
+            50% {
+                transform: scale(1.03, 1.03);
+                transform-origin: bottom left
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1, 1);
+                transform-origin: bottom left
+            }
+        }
+
+        @keyframes fb_bounce_out_v2 {
+            0% {
+                opacity: 1;
+                transform: scale(1, 1);
+                transform-origin: bottom right
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: bottom right
+            }
+        }
+
+        @keyframes fb_bounce_out_from_left {
+            0% {
+                opacity: 1;
+                transform: scale(1, 1);
+                transform-origin: bottom left
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: bottom left
+            }
+        }
+
+        @keyframes fb_bounce_out_v2_mobile_chat_started {
+            0% {
+                opacity: 1;
+                top: 0
+            }
+
+            100% {
+                opacity: 0;
+                top: 20px
+            }
+        }
+
+        @keyframes fb_customer_chat_bubble_bounce_in_animation {
+            0% {
+                bottom: 6pt;
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: center
+            }
+
+            70% {
+                bottom: 18pt;
+                opacity: 1;
+                transform: scale(1.2, 1.2)
+            }
+
+            100% {
+                transform: scale(1, 1)
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                opacity: .1;
+                transform: translateY(100%)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes slideInFromBottomDelay {
+            0% {
+                opacity: 0;
+                transform: translateY(100%)
+            }
+
+            97% {
+                opacity: 0;
+                transform: translateY(100%)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+    </style>
+    <script charset="utf-8"
+        src="https://a0.muscache.com/airbnb/static/packages/explore-original_storefronts-current-plugins_DenseCarouselSection-d8ac1cd1.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/66bc-3320c8a9.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/858e-30bbd762.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/b12d-d2377ae6.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8"
+        src="https://a0.muscache.com/airbnb/static/packages/explore-original_explore_EarhartInserts-cbeeb5e5.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8"
+        src="https://a0.muscache.com/airbnb/static/packages/explore-original_explore_EarhartInsertsFullBleedImageTitle-b42ffae6.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/1ff0-1776a3c6.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8"
+        src="https://a0.muscache.com/airbnb/static/packages/explore-original_storefronts-current-plugins_TabbedDenseGridSection-8cce113c.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/service-worker-initializer-e7b73311.js"
+        crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://a0.muscache.com/airbnb/static/packages/LocaleSettingContainers-185f3c43.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form class="_1keztfl" action="/s/all" method="get" role="search">
+        <fieldset class="_d206yy">
+            <div class="_17fy1ix" role="tablist" aria-label="What can we help you find?"><label
+                    for="search-block-tab-false-STAYS" class="_3hmsj"><input type="radio" class="_g0tqbo9" checked=""
+                        value="/homes" id="search-block-tab-false-STAYS"
+                        data-testid="radio-tab-search-block-tab-false-STAYS" name="refinement_paths[]" role="tab"
+                        aria-selected="true"><span class="_1ea7qej" data-text="true">Places to stay</span></label><label
+                    for="search-block-tab-false-EXPERIENCES" class="_3hmsj"><input type="radio" class="_1ai7zse"
+                        value="/experiences" id="search-block-tab-false-EXPERIENCES"
+                        data-testid="radio-tab-search-block-tab-false-EXPERIENCES" name="refinement_paths[]" role="tab"
+                        aria-selected="false"><span class="_1ea7qej" data-text="true">Experiences</span></label>
+                <div class="_1gwzhbum"><a href="/s/experiences/online" class="_p4ul2ts">Online Experiences</a></div>
+            </div>
+        </fieldset>
+        <div class="_1sx4f1vv" data-panel-bounds="true">
+            <div class="_1c7nvmy">
+                <div class="_1jkbosm7">
+                    <div>
+                        <div class="_4w946cw"><label class="_n3o7pji" for="bigsearch-query-detached-query">
+                                <div class="_gor68n">
+                                    <div class="_fmav2so">Location</div><input class="_1xq16jy" aria-autocomplete="list"
+                                        aria-expanded="false" autocomplete="off" autocorrect="off" spellcheck="false"
+                                        id="bigsearch-query-detached-query" role="combobox" value="" name="query"
+                                        placeholder="Where are you going?" required=""
+                                        data-testid="structured-search-input-field-query">
+                                </div>
+                            </label><span id="Koan-query__description" class="_krjbj">Navigate forward to access
+                                suggested
+                                results</span><span aria-atomic="true" aria-live="polite" role="status"
+                                class="_krjbj"></span></div>
+                    </div>
+                </div>
+                <div class="_43mycv"></div>
+                <div class="_1l6jpwo">
+                    <div class="_j8gg2a">
+                        <div role="button" tabindex="0" class="_1akb2mdw" aria-expanded="false"
+                            data-testid="structured-search-input-field-split-dates-0">
+                            <div class="_seuyf">
+                                <div class="_wtz1co">Check in</div>
+                                <div class="_uh2dzp">Add dates</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_43mycv"></div>
+                    <div class="_j8gg2a">
+                        <div role="button" tabindex="0" class="_1akb2mdw" aria-expanded="false"
+                            data-testid="structured-search-input-field-split-dates-1">
+                            <div class="_seuyf">
+                                <div class="_wtz1co">Check out</div>
+                                <div class="_uh2dzp">Add dates</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="_43mycv"></div>
+                <div class="_1yulsurh">
+                    <div role="button" tabindex="0" class="_37ivfdq" aria-expanded="false"
+                        data-testid="structured-search-input-field-guests-button">
+                        <div class="_seuyf">
+                            <div class="_wtz1co">Guests</div>
+                            <div class="_uh2dzp">Add guests</div>
+                        </div>
+                    </div>
+                    <div class="_w64aej"><button class="_sxfp92z" aria-expanded="false" type="button"
+                            data-testid="structured-search-input-search-button">
+                            <div class="_1hb5o3s">
+                                <div class="_14lk9e14"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true" role="presentation" focusable="false"
+                                        style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                                        <g fill="none">
+                                            <path
+                                                d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="_c5qlo1f">Search</div>
+                            </div>
+                        </button></div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

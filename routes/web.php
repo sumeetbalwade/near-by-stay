@@ -17,8 +17,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/more-info', function () {
+    return view('single-place');
+});
+
 Route::get('/test', function () {
-    return view('test');
+    return view('multi-rooms');
 });
 
 Route::get('/test1', function () {
