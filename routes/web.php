@@ -21,7 +21,7 @@ Route::get('/more-info', function () {
     return view('single-place');
 });
 
-Route::get('/test', function () {
+Route::get('/result', function () {
     return view('multi-rooms');
 });
 
