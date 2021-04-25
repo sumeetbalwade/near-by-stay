@@ -253,6 +253,8 @@
 
         </script>
     </section>
+
+
     <div class="best-rooms w3l-blog py-5">
         <div class="row">
             <div class="col-lg-3">
@@ -261,433 +263,87 @@
             <div class="col-lg-9">
                 <div class="container py-lg-5 py-sm-4">
                     <div class="ban-content-inf row">
-                        <div class="maghny-gd-1 col-lg-4 col-md-6">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily">
-                                    <img class="img-fluid" src="assets/images/about1.jpg" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4 class="top-text">
-                                                Luxury Hotel room
-                                                <ul>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star-o"></span>
-                                                    </li>
-                                                </ul>
-                                            </h4>
-                                            <p>Book for 20$</p>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                                <div class="room-info">
-                                    <h3 class="room-title">
-                                        <a href="#url">Luxury Hotel</a>
-                                    </h3>
-                                    <ul class="mb-3">
-                                        <li>
-                                            <span class="fa fa-users"></span> 2
-                                            Guests
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-bed"></span> 15sqft
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet elit. Omnis
-                                        illum sequi, tenetur.
-                                    </p>
-                                    <a href="booking.html" class="btn mt-sm-4 mt-3">Book Now</a>
-                                    <div class="room-info-bottom">
-                                        <ul class="room-amenities">
+
+                        @for ($i=0;$i < 6; $i++)
+                            <div class="my-gd-1 col-lg-4 col-md-6">
+                                <div class="maghny-grid">
+                                    <figure class="effect-lily">
+                                        <img class="img-fluid" src="assets/images/about1.jpg" alt="" />
+                                        <figcaption>
+                                            <div>
+                                                <h4 class="top-text">
+                                                    Pune, Maharastra
+                                                    <ul>
+                                                        <li>
+                                                            <span class="fa fa-star"></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="fa fa-star"></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="fa fa-star"></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="fa fa-star"></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </li>
+                                                    </ul>
+                                                </h4>
+                                                <p>Villa</p>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="room-info mb-4">
+                                        <h3 class="room-title">
+                                            <a href="#url">Luxury Villa</a>
+                                        </h3>
+                                        <ul class="mb-3">
                                             <li>
-                                                <a href="#url"><span class="fa fa-bed" title="Beds"></span></a>
+                                                <span class="fa fa-users"></span> 10
+                                                Guests
                                             </li>
                                             <li>
-                                                <a href="#url"><span class="fa fa-television"
-                                                        title="Television"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bath"
-                                                        title="Private Bathroom"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-motorcycle"
-                                                        title="Bike Rental"></span></a>
+                                                <span class="fa fa-bed"></span> 3 Rooms
                                             </li>
                                         </ul>
-                                        <a href="room-single.html" class="btn view">Full Info →</a>
+                                        <span class="btn">Rs 2000</span>
+                                        <p style="font-size: 13px;">per Night</p>
+                                        <div class="room-info-bottom">
+                                            <ul class="room-amenities">
+                                                <li>
+                                                    <a href="#url"><span class="fa fa-bed" title="Beds"></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#url"><span class="fa fa-television"
+                                                            title="Television"></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#url"><span class="fa fa-bath"
+                                                            title="Private Bathroom"></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#url"><span class="fa fa-motorcycle"
+                                                            title="Bike Rental"></span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+
+                                        <div class="room-info-bottom justify-content-center mb-4">
+                                            <a href="room-single.html" class="btn view">View</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="maghny-gd-1 col-lg-4 col-md-6 mt-md-0 mt-4">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily">
-                                    <img class="img-fluid" src="assets/images/blog3.jpg" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4 class="top-text">
-                                                Luxury Hotel room
-                                                <ul>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star-o"></span>
-                                                    </li>
-                                                </ul>
-                                            </h4>
-                                            <p>Book for 20$</p>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                                <div class="room-info">
-                                    <h3 class="room-title">
-                                        <a href="#url">Luxury Hotel</a>
-                                    </h3>
-                                    <ul class="mb-3">
-                                        <li>
-                                            <span class="fa fa-users"></span> 2
-                                            Guests
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-bed"></span> 15sqft
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet elit. Omnis
-                                        illum sequi, tenetur.
-                                    </p>
-                                    <a href="booking.html" class="btn mt-sm-4 mt-3">Book Now</a>
-                                    <div class="room-info-bottom">
-                                        <ul class="room-amenities">
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bed" title="Beds"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-television"
-                                                        title="Television"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bath"
-                                                        title="Private Bathroom"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-motorcycle"
-                                                        title="Bike Rental"></span></a>
-                                            </li>
-                                        </ul>
-                                        <a href="room-single.html" class="btn view">Full Info →</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-lg-4 col-md-6 mt-md-0 mt-4">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily">
-                                    <img class="img-fluid" src="assets/images/about3.jpg" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4 class="top-text">
-                                                Luxury Hotel room
-                                                <ul>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star-o"></span>
-                                                    </li>
-                                                </ul>
-                                            </h4>
-                                            <p>Book for 20$</p>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                                <div class="room-info">
-                                    <h3 class="room-title">
-                                        <a href="#url">Luxury Hotel</a>
-                                    </h3>
-                                    <ul class="mb-3">
-                                        <li>
-                                            <span class="fa fa-users"></span> 2
-                                            Guests
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-bed"></span> 15sqft
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet elit. Omnis
-                                        illum sequi, tenetur.
-                                    </p>
-                                    <a href="booking.html" class="btn mt-sm-4 mt-3">Book Now</a>
-                                    <div class="room-info-bottom">
-                                        <ul class="room-amenities">
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bed" title="Beds"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-television"
-                                                        title="Television"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bath"
-                                                        title="Private Bathroom"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-motorcycle"
-                                                        title="Bike Rental"></span></a>
-                                            </li>
-                                        </ul>
-                                        <a href="room-single.html" class="btn view">Full Info →</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-lg-4 col-md-6 mt-md-5 mt-4">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily">
-                                    <img class="img-fluid" src="assets/images/blog1.jpg" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4 class="top-text">
-                                                Luxury Hotel room
-                                                <ul>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star-o"></span>
-                                                    </li>
-                                                </ul>
-                                            </h4>
-                                            <p>Book for 20$</p>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                                <div class="room-info">
-                                    <h3 class="room-title">
-                                        <a href="#url">Luxury Hotel</a>
-                                    </h3>
-                                    <ul class="mb-3">
-                                        <li>
-                                            <span class="fa fa-users"></span> 2
-                                            Guests
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-bed"></span> 15sqft
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet elit. Omnis
-                                        illum sequi, tenetur.
-                                    </p>
-                                    <a href="booking.html" class="btn mt-sm-4 mt-3">Book Now</a>
-                                    <div class="room-info-bottom">
-                                        <ul class="room-amenities">
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bed" title="Beds"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-television"
-                                                        title="Television"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bath"
-                                                        title="Private Bathroom"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-motorcycle"
-                                                        title="Bike Rental"></span></a>
-                                            </li>
-                                        </ul>
-                                        <a href="room-single.html" class="btn view">Full Info →</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-lg-4 col-md-6 mt-5">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily">
-                                    <img class="img-fluid" src="assets/images/blog2.jpg" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4 class="top-text">
-                                                Luxury Hotel room
-                                                <ul>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star-o"></span>
-                                                    </li>
-                                                </ul>
-                                            </h4>
-                                            <p>Book for 20$</p>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                                <div class="room-info">
-                                    <h3 class="room-title">
-                                        <a href="#url">Luxury Hotel</a>
-                                    </h3>
-                                    <ul class="mb-3">
-                                        <li>
-                                            <span class="fa fa-users"></span> 2
-                                            Guests
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-bed"></span> 15sqft
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet elit. Omnis
-                                        illum sequi, tenetur.
-                                    </p>
-                                    <a href="booking.html" class="btn mt-sm-4 mt-3">Book Now</a>
-                                    <div class="room-info-bottom">
-                                        <ul class="room-amenities">
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bed" title="Beds"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-television"
-                                                        title="Television"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bath"
-                                                        title="Private Bathroom"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-motorcycle"
-                                                        title="Bike Rental"></span></a>
-                                            </li>
-                                        </ul>
-                                        <a href="room-single.html" class="btn view">Full Info →</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-lg-4 col-md-6 mt-5">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily">
-                                    <img class="img-fluid" src="assets/images/about2.jpg" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4 class="top-text">
-                                                Luxury Hotel room
-                                                <ul>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star"></span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="fa fa-star-o"></span>
-                                                    </li>
-                                                </ul>
-                                            </h4>
-                                            <p>Book for 20$</p>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                                <div class="room-info">
-                                    <h3 class="room-title">
-                                        <a href="#url">Luxury Hotel</a>
-                                    </h3>
-                                    <ul class="mb-3">
-                                        <li>
-                                            <span class="fa fa-users"></span> 2
-                                            Guests
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-bed"></span> 15sqft
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet elit. Omnis
-                                        illum sequi, tenetur.
-                                    </p>
-                                    <a href="booking.html" class="btn mt-sm-4 mt-3">Book Now</a>
-                                    <div class="room-info-bottom">
-                                        <ul class="room-amenities">
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bed" title="Beds"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-television"
-                                                        title="Television"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-bath"
-                                                        title="Private Bathroom"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#url"><span class="fa fa-motorcycle"
-                                                        title="Bike Rental"></span></a>
-                                            </li>
-                                        </ul>
-                                        <a href="room-single.html" class="btn view">Full Info →</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endfor
+
+
+
+
+
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center mt-5 mb-0">
                             <li class="page-item disabled">

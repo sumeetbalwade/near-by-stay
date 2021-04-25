@@ -41,3 +41,31 @@ img.zoom {
 .modal-footer {
     display: none;
 }
+
+
+
+.cat_001 {
+    width: 160px;
+    margin: 0 6px;
+    white-space: nowrap;
+}
+
+
+.cat_001 img {
+    padding: 10px;
+}
+
+
+.event-p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.c-2{
+    justify-content: center;
+}
+
+.c-2 .lazyloaded{
+    border-radius: 25px;
+}

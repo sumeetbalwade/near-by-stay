@@ -17,6 +17,8 @@
 
     @include("components.nearbyplace")
 
+    @include("components.celebrates")
+
     @include("components.selectorhome")
 
     @include("components.bestplace")

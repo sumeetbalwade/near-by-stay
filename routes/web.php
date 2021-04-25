@@ -25,6 +25,6 @@ Route::get('/result', function () {
     return view('multi-rooms');
 });
 
-Route::get('/test1', function () {
-    return view('test1');
+Route::get('/test', function () {
+    return view('test');
 });

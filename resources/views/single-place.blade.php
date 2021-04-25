@@ -254,29 +254,12 @@
     <!-- room-single-block -->
     <section class="room-single-block">
         <div class="content-with-slider">
-            <div class="container">
+            <div class="mx-4">
                 <div class="content-photo-1 d-grid">
-                    <div class="content-photo-left text-center">
-                        <h4>One Tree Farm</h4>
-                        <h6>Pune , Maharashtra</h6>
-                        <div class="border-line">
-                            <div class="bg">
-                                <span class="price">₹ 6240</span>
-                                <p> Only</p>
-                            </div>
-                            <div class="book-btn px-2">
-                                <a href="booking.html" class="btn btn-style btn-secondary mt-3">Enquire Now</a>
-                            </div>
-                        </div>
-                        <ul class="room-amenities">
-                            <li><a href="#url"><span class="fa fa-beer"></span> Entire Villa</a></li>
-                            <li><a href="#url"><span class="fa fa-users"></span> 2 Guests</a></li>
-                            <li><a href="#url"><span class="fa fa-bed"></span> Double Bed</a></li>
-                        </ul>
-                        <a href="room.html" class="back"> <span class="fa fa-long-arrow-left"></span> Back to all
-                            rooms</a>
-                    </div>
-                    <div class="content-photo-right">
+                    <div class="content-photo-right" style="
+                    width: 60vw;
+                    justify-self: center;
+                ">
                         <div class="csslider infinity" id="slider1">
                             <input type="radio" name="slides" checked="checked" id="slides_1" />
                             <input type="radio" name="slides" id="slides_2" />
@@ -311,6 +294,26 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="content-photo-left text-center" style="width: 20vw;justify-self: center;">
+                        <h4>One Tree Farm</h4>
+                        <h6>Pune , Maharashtra</h6>
+                        <div class="border-line">
+                            <div class="bg">
+                                <span class="price">₹ 6240</span>
+                                <p> Only</p>
+                            </div>
+                            <div class="book-btn px-2">
+                                <a href="booking.html" class="btn btn-style btn-secondary mt-3">Enquire Now</a>
+                            </div>
+                        </div>
+                        <ul class="room-amenities">
+                            <li><a href="#url"><span class="fa fa-beer"></span> Entire Villa</a></li>
+                            <li><a href="#url"><span class="fa fa-users"></span> 2 Guests</a></li>
+                            <li><a href="#url"><span class="fa fa-bed"></span> Double Bed</a></li>
+                        </ul>
+                        <a href="room.html" class="back"> <span class="fa fa-long-arrow-left"></span> Back to all
+                            rooms</a>
                     </div>
                 </div>
             </div>
