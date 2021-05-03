@@ -37,9 +37,64 @@ class PropertyController extends Controller
     {
 
         $property = new Property();
+        $property->type = $request->get('type');
         $property->name = $request->get('name');
+        $property->city = $request->get('city');
+        $property->state = $request->get('state');
+        if($request->get('type') == 'Villa' || $request->get('type') == 'FarmHouse' || $request->get('type') == 'Bungalow') {
+
+            $property->nob = $request->get('nb');
+        }
+        $property->gc = $request->get('gc');
+        $property->price = $request->get('price');
+        if($request->get('veg-only')) {
+
+            $property->vo = true;
+        }
+        if($request->get('pool')) {
+
+            $property->pool = true;
+        }
+        if($request->get('wifi')) {
+
+            $property->wifi = true;
+        }
+        if($request->get('pets')) {
+
+            $property->pets = true;
+        }
+        if($request->get('beach')) {
+
+            $property->beach = true;
+        }
+        if($request->get('bc')) {
+
+            $property->bc = true;
+        }
+        if($request->get('fg')) {
+
+            $property->fg = true;
+        }
+        if($request->get('ce')) {
+
+            $property->ce = true;
+        }
+        if($request->get('ac')) {
+
+            $property->ac = true;
+        }
+        if($request->get('cp')) {
+
+            $property->cp = true;
+        }
+        if($request->get('ws')) {
+
+            $property->ws = true;
+        }
+
+
         $property->save();
-        return redirect('/dashboard');
+        return redirect('/addproperty')
 
 
     }
