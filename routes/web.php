@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,9 @@ Route::get('/test', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.dashboard');
 })->name('dashboard');
+
+Route::get('/addproperty', function () {
+    return view('admin.addproperty');
+})->middleware(['auth:sanctum', 'verified'])->name('admin-add-property');
+
+Route::post('/addproperty', [PropertyController::class,'store'])->name('admin-add-property');
