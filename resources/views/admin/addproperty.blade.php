@@ -1,9 +1,10 @@
 @extends('admin.template')
 
 @section('content')
-<script>
-    document.getElementById('addprop').className += ' active'
-</script>
+    <script>
+        document.getElementById('addprop').className += ' active'
+
+    </script>
 
     <section class="content-header mx-lg-5">
         <div class="container-fluid">
@@ -27,26 +28,54 @@
                 <h3 class="card-title">Add Property</h3>
             </div>
             <!-- /.card-header -->
+
             <!-- form start -->
             <form method="post" action="/addproperty">
                 @csrf
                 <div class="card-body">
+                    @if (Session::has('success'))
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h5><i class="icon fas fa-check"></i> Success!</h5>
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label>Property Type</label>
+                                <select class="custom-select" name="type">
+                                    <option value="Villa">Villa</option>
+                                    <option value="HomeStay">HomeStay</option>
+                                    <option value="Resort">Resort</option>
+                                    <option value="Cottage">Cottage</option>
+                                    <option value="Service Apartment">Service Apartment</option>
+                                    <option value="FarmHouse">FarmHouse</option>
+                                    <option value="Bungalow">Bungalow</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" name="location" id="location" placeholder="Location"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
-                        <label>Property Type</label>
-                        <select class="custom-select" name="type" onchange="hideNOB('hnob',this)">
-                            <option value="Villa">Villa</option>
-                            <option value="HomeStay">HomeStay</option>
-                            <option value="Resort">Resort</option>
-                            <option value="Cottage">Cottage</option>
-                            <option value="Service Apartment">Service Apartment</option>
-                            <option value="FarmHouse">FarmHouse</option>
-                            <option value="Bungalow">Bungalow</option>
-                        </select>
+                        <label for="name">Property Name</label>
+                        <input type="text" class="form-control" autocomplete="null" name="name" id="name"
+                            placeholder="Enter Property name">
                     </div>
                     <div class="form-group">
-                        <label for="name">Property Name</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Property name">
+                        <label for="address">Address</label>
+                        <textarea name="address" id="address" class="form-control" rows="3"></textarea>
                     </div>
 
                     <div class="row">
@@ -81,13 +110,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" id="hnob">
-                        <label for="Number_of_Bedrooms">Number of Bedrooms</label>
-                        <input type="number" class="form-control" name="nb" id="Number_of_Bedrooms"
-                            placeholder="Number of Bedrooms">
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group" id="hnob">
+                                <label for="Number_of_Bedrooms">Number of Bedrooms</label>
+                                <input type="number" class="form-control" name="nb" id="Number_of_Bedrooms"
+                                    placeholder="Number of Bedrooms">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+
+                            <div class="form-group">
+                                <label for="Guest_Capacity">Guest Capacity</label>
+                                <input type="number" min="0" class="form-control" name="gc" id="Guest_Capacity"
+                                    placeholder="Guest Capacity" required>
+                            </div>
+                        </div>
                     </div>
 
-                    <script>
+                    {{-- <script>
                         function hideNOB(id,elementValue) {
                             console.log(elementValue.value);
                             console.log(id);
@@ -99,24 +144,58 @@
 
                             }
                         }
-                    </script>
-                    <div class="form-group">
-                        <label for="Guest_Capacity">Guest Capacity</label>
-                        <input type="number" min="0" class="form-control" name="gc" id="Guest_Capacity"
-                            placeholder="Guest Capacity" required>
+                    </script> --}}
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="number" min="0" step="any" class="form-control" id="price" name="price"
+                                    placeholder="Price" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label for="Ratings">Ratings</label>
+                                <input type="number" min="0" max="5" class="form-control" id="Ratings" name="ratings"
+                                    placeholder="Ratings" required>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="price">Price</label>
-                        <input type="number" min="0" step="any" class="form-control" id="price" name="price"
-                            placeholder="Price" required>
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" class="form-control" rows="3"></textarea>
                     </div>
 
 
                     <div class="form-group">
                         <label for="exampleInputPassword1">Aminities</label>
-                        <div class=" row">
+
+                        @php
+                            $aminities = ['television', 'wifi', 'air-conditioner', 'free-breakfast', 'free-cancellation', 'ensuite-bathroom', 'swimming-pool', 'lawn', 'valley-view', 'lake-view', 'pets-allowed', 'alcohol-allowed', 'bonfire', 'parking', 'genset', 'towels-and-toiletries', 'inverter', 'bedroom-and-laundry', 'essentials', 'towels', 'bed-sheets', 'soap-and-toilet-paper', 'hanger', 'CCTV-cameras', 'first-aid-kit', 'fire-extinguisher', 'kitchen', 'microwave', 'refrigerator', 'dishes-and-silverware', 'space-where-guests-can-cook-their-own-meals'];
+                            
+                        @endphp
+
+                        <div class="row">
+
+                            @foreach ($aminities as $item)
+                                <div class="custom-control custom-checkbox col-md-3">
+                                    <input class="custom-control-input" type="checkbox" name="{{ $item }}"
+                                        id="{{ $item }}" value="{{ $item }}">
+                                    <label for="{{ $item }}"
+                                        class="custom-control-label">{{ $item }}</label>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        {{-- <div class=" row">
                             <div class="custom-control custom-checkbox mx-3">
-                                <input class="custom-control-input" type="checkbox" id="veg-only" name="veg-only" value="veg-only">
+                                <input class="custom-control-input" type="checkbox" id="veg-only" name="veg-only"
+                                    value="veg-only">
                                 <label for="veg-only" class="custom-control-label">VEG ONLY</label>
                             </div>
                             <div class="custom-control custom-checkbox mx-3">
@@ -135,7 +214,15 @@
                                 <input class="custom-control-input" type="checkbox" id="beach" name="beach" value="beach">
                                 <label for="beach" class="custom-control-label">Beach</label>
                             </div>
-                        </div>
+                            <div class="custom-control custom-checkbox mx-3">
+                                <input class="custom-control-input" type="checkbox" id="television" name="television" value="television">
+                                <label for="television" class="custom-control-label">Television</label>
+                            </div>
+                            <div class="custom-control custom-checkbox mx-3">
+                                <input class="custom-control-input" type="checkbox" id="air-conditioner" name="air-conditioner" value="air-conditioner">
+                                <label for="air-conditioner" class="custom-control-label">Air Conditioner</label>
+                            </div>
+                        </div> --}}
                     </div>
 
                     <div class="form-group">
@@ -168,7 +255,8 @@
                                 <label for="cocktail-party" class="custom-control-label">Cocktail party</label>
                             </div>
                             <div class="custom-control custom-checkbox mx-3">
-                                <input class="custom-control-input" type="checkbox" name="ws" id="weekend-stay" value="weekend-stay">
+                                <input class="custom-control-input" type="checkbox" name="ws" id="weekend-stay"
+                                    value="weekend-stay">
                                 <label for="weekend-stay" class="custom-control-label">Weekend stay</label>
                             </div>
                         </div>

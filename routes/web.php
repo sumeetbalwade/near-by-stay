@@ -38,4 +38,9 @@ Route::get('/addproperty', function () {
     return view('admin.addproperty');
 })->middleware(['auth:sanctum', 'verified'])->name('admin-add-property');
 
-Route::post('/addproperty', [PropertyController::class,'store'])->name('admin-add-property');
+Route::post('/addproperty', [PropertyController::class, 'store'])->name('admin-add-property');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/viewAllProperty', [PropertyController::class, 'show'])->name('admin.viewallprop');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/deleteProperty/{id}', [PropertyController::class, 'destroy']);
