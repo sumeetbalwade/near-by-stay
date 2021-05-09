@@ -72,7 +72,8 @@
                                     <td>
                                         <div class="row">
                                             <a href="" class="btn btn-primary mx-1 my-1">View</a>
-                                            <a href="" class="btn btn-success mx-1 my-1">Edit</a>
+                                            <a href="/editProperty/{{ $property->id }}"
+                                                class="btn btn-success mx-1 my-1">Edit</a>
                                             <a href="/deleteProperty/{{ $property->id }}"
                                                 class="btn btn-danger mx-1 my-1">Delete</a>
                                         </div>

@@ -130,9 +130,10 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit(Property $property, $id)
     {
-        //
+        $property = Property::find($id);
+        return view('admin.editproperty', compact('property'));
     }
 
     /**

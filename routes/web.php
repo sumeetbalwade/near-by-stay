@@ -44,3 +44,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/viewAllProperty', [Proper
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/deleteProperty/{id}', [PropertyController::class, 'destroy']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/editProperty/{id}', [PropertyController::class, 'edit']);
