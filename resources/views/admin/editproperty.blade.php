@@ -26,7 +26,7 @@
             <!-- /.card-header -->
 
             <!-- form start -->
-            <form method="post" action="#">
+            <form method="post" action="{{ route('admin.updateprop', ['id' => $property->id]) }}">
                 @csrf
                 <div class="card-body">
 
@@ -37,6 +37,8 @@
                             <div class="form-group">
                                 <label>Property Type</label>
                                 <select class="custom-select" name="type">
+
+                                    <option value="{{ $property->type }}">{{ $property->type }}</option>
                                     <option value="Villa">Villa</option>
                                     <option value="HomeStay">HomeStay</option>
                                     <option value="Resort">Resort</option>
@@ -52,7 +54,7 @@
                             <div class="form-group">
                                 <label for="location">Location</label>
                                 <input type="text" class="form-control" name="location" id="location" placeholder="Location"
-                                    required>
+                                    required value="{{ $property->location }}">
                             </div>
                         </div>
                     </div>
@@ -65,7 +67,8 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <textarea name="address" id="address" class="form-control" rows="3"></textarea>
+                        <textarea name="address" id="address" class="form-control"
+                            rows="3">{{ $property->address }}</textarea>
                     </div>
 
                     <div class="row">
@@ -74,7 +77,8 @@
                             <div class="form-group">
                                 <label>City</label>
                                 <select class="form-control select2" name="city" style="width: 100%;">
-                                    <option selected="selected">Alabama</option>
+                                    <option selected="selected">{{ $property->city }}</option>
+                                    <option>Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -89,7 +93,8 @@
                             <div class="form-group">
                                 <label>State</label>
                                 <select class="form-control select2" name="state" style="width: 100%;">
-                                    <option selected="selected">Alabama</option>
+                                    <option selected="selected">{{ $property->state }}</option>
+                                    <option>Alabama</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -108,7 +113,7 @@
                             <div class="form-group" id="hnob">
                                 <label for="Number_of_Bedrooms">Number of Bedrooms</label>
                                 <input type="number" class="form-control" name="nb" id="Number_of_Bedrooms"
-                                    placeholder="Number of Bedrooms">
+                                    placeholder="Number of Bedrooms" value="{{ $property->nob }}">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -117,7 +122,7 @@
                             <div class="form-group">
                                 <label for="Guest_Capacity">Guest Capacity</label>
                                 <input type="number" min="0" class="form-control" name="gc" id="Guest_Capacity"
-                                    placeholder="Guest Capacity" required>
+                                    placeholder="Guest Capacity" value="{{ $property->gc }}" required>
                             </div>
                         </div>
                     </div>
@@ -143,7 +148,7 @@
                             <div class="form-group">
                                 <label for="price">Price</label>
                                 <input type="number" min="0" step="any" class="form-control" id="price" name="price"
-                                    placeholder="Price" required>
+                                    placeholder="Price" value="{{ $property->price }}" required>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -151,14 +156,15 @@
                             <div class="form-group">
                                 <label for="Ratings">Ratings</label>
                                 <input type="number" min="0" max="5" class="form-control" id="Ratings" name="ratings"
-                                    placeholder="Ratings" required>
+                                    placeholder="Ratings" value="{{ $property->ratings }}" required>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea name="description" id="description" class="form-control" rows="3"></textarea>
+                        <textarea name="description" id="description" class="form-control"
+                            rows="3">{{ $property->description }}</textarea>
                     </div>
 
 
@@ -175,7 +181,7 @@
                             @foreach ($aminities as $item)
                                 <div class="custom-control custom-checkbox col-md-3">
                                     <input class="custom-control-input" type="checkbox" name="{{ $item }}"
-                                        id="{{ $item }}" value="{{ $item }}">
+                                        id="{{ $item }}" value="{{ $item }}" @if ($property->$item) checked @endif>
                                     <label for="{{ $item }}"
                                         class="custom-control-label">{{ $item }}</label>
                                 </div>
@@ -220,33 +226,33 @@
                         <div class=" row">
                             <div class="custom-control custom-checkbox mx-3">
                                 <input class="custom-control-input" type="checkbox" name="bc" id="birthday-celebration"
-                                    value="birthday-celebration">
+                                    value="birthday-celebration" @if ($property->bc) checked @endif>
                                 <label for="birthday-celebration" class="custom-control-label">Birthday Celebration</label>
                             </div>
                             <div class="custom-control custom-checkbox mx-3">
                                 <input class="custom-control-input" type="checkbox" name="fg" id="family-gateway"
-                                    value="family-gateway">
+                                    value="family-gateway" @if ($property->fg) checked @endif>
                                 <label for="family-gateway" class="custom-control-label">Family gateway</label>
                             </div>
                             <div class="custom-control custom-checkbox mx-3">
                                 <input class="custom-control-input" name="ce" type="checkbox" id="corporate-event"
-                                    value="corporate-event">
+                                    value="corporate-event" @if ($property->ce) checked @endif>
                                 <label for="corporate-event" class="custom-control-label">Corporate Event</label>
                             </div>
                             <div class="custom-control custom-checkbox mx-3">
                                 <input class="custom-control-input" name="ac" type="checkbox" id="anniversary-celebration"
-                                    value="anniversary-celebration">
+                                    value="anniversary-celebration" @if ($property->ac) checked @endif>
                                 <label for="anniversary-celebration" class="custom-control-label">Anniversary
                                     celebration</label>
                             </div>
                             <div class="custom-control custom-checkbox mx-3">
                                 <input class="custom-control-input" name="cp" type="checkbox" id="cocktail-party"
-                                    value="cocktail-party">
+                                    value="cocktail-party" @if ($property->cp) checked @endif>
                                 <label for="cocktail-party" class="custom-control-label">Cocktail party</label>
                             </div>
                             <div class="custom-control custom-checkbox mx-3">
                                 <input class="custom-control-input" type="checkbox" name="ws" id="weekend-stay"
-                                    value="weekend-stay">
+                                    value="weekend-stay" @if ($property->ws) checked @endif>
                                 <label for="weekend-stay" class="custom-control-label">Weekend stay</label>
                             </div>
                         </div>

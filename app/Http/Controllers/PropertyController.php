@@ -56,6 +56,8 @@ class PropertyController extends Controller
             if ($request->get($item)) {
 
                 $property->$item = true;
+            } else {
+                $property->$item = false;
             }
         }
         // if($request->get('veg-only')) {
@@ -143,9 +145,84 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+    public function update(Request $request, $id)
     {
-        //
+        $property = Property::find($id);
+        $property->type = $request->get('type');
+        $property->location = $request->get('location');
+        $property->name = $request->get('name');
+        $property->address = $request->get('address');
+        $property->city = $request->get('city');
+        $property->state = $request->get('state');
+
+        $property->nob = $request->get('nb');
+        $property->gc = $request->get('gc');
+        $property->price = $request->get('price');
+        $property->ratings = $request->get('ratings');
+        $property->description = $request->get('description');
+
+        $aminities = ['television', 'wifi', 'air-conditioner', 'free-breakfast', 'free-cancellation', 'ensuite-bathroom', 'swimming-pool', 'lawn', 'valley-view', 'lake-view', 'pets-allowed', 'alcohol-allowed', 'bonfire', 'parking', 'genset', 'towels-and-toiletries', 'inverter', 'bedroom-and-laundry', 'essentials', 'towels', 'bed-sheets', 'soap-and-toilet-paper', 'hanger', 'CCTV-cameras', 'first-aid-kit', 'fire-extinguisher', 'kitchen',  'microwave', 'refrigerator', 'dishes-and-silverware', 'space-where-guests-can-cook-their-own-meals'];
+
+        foreach ($aminities as $item) {
+            if ($request->get($item)) {
+
+                $property->$item = true;
+            } else {
+                $property->$item = false;
+            }
+        }
+        // if($request->get('veg-only')) {
+
+        //     $property->vo = true;
+        // }
+        // if($request->get('pool')) {
+
+        //     $property->pool = true;
+        // }
+        // if($request->get('wifi')) {
+
+        //     $property->wifi = true;
+        // }
+        // if($request->get('pets')) {
+
+        //     $property->pets = true;
+        // }
+        // if($request->get('beach')) {
+
+        //     $property->beach = true;
+        // }
+
+
+
+        if ($request->get('bc')) {
+
+            $property->bc = true;
+        }
+        if ($request->get('fg')) {
+
+            $property->fg = true;
+        }
+        if ($request->get('ce')) {
+
+            $property->ce = true;
+        }
+        if ($request->get('ac')) {
+
+            $property->ac = true;
+        }
+        if ($request->get('cp')) {
+
+            $property->cp = true;
+        }
+        if ($request->get('ws')) {
+
+            $property->ws = true;
+        }
+
+
+        $property->save();
+        $message = 'Property with id ' . $property->id . ' is Added Successfully ';
+        return redirect(route('admin.viewallprop'));
     }
 
     /**
