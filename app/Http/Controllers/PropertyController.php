@@ -12,9 +12,11 @@ class PropertyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+
+        $property = Property::find($id);
+        return view('single-place', ['property' => $property]);
     }
 
     /**
@@ -25,6 +27,20 @@ class PropertyController extends Controller
     public function create()
     {
         //
+    }
+
+
+    public function search(Request $request)
+    {
+        if ($request->has('query')) {
+            $query = $request->get('query');
+            $result = Property::where('name', 'like', '%' . $query . '%')->orWhere('location', 'like', '%' . $query . '%')->get();
+
+            return response()->json(['data' => $result]);
+        } else {
+
+            return view('admin.searchProperty');
+        }
     }
 
     /**
@@ -221,8 +237,8 @@ class PropertyController extends Controller
 
 
         $property->save();
-        $message = 'Property with id ' . $property->id . ' is Added Successfully ';
-        return redirect(route('admin.viewallprop'));
+        $message = 'Property with id ' . $property->id . ' is Updated Successfully ';
+        return redirect(route('admin.viewallprop'))->with('edited', $message);
     }
 
     /**

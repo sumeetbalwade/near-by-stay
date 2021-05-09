@@ -35,6 +35,17 @@
                     </div>
                 </div>
             @endif
+
+
+            @if (Session::has('edited'))
+                <div class="card-header">
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-check"></i> Success!</h5>
+                        {{ Session::get('edited') }}
+                    </div>
+                </div>
+            @endif
             @if (count($properties) < 1)
 
                 <div class="card-header">
@@ -71,7 +82,8 @@
                                     </td>
                                     <td>
                                         <div class="row">
-                                            <a href="" class="btn btn-primary mx-1 my-1">View</a>
+                                            <a href="/more-info/{{ $property->id }}"
+                                                class="btn btn-primary mx-1 my-1">View</a>
                                             <a href="/editProperty/{{ $property->id }}"
                                                 class="btn btn-success mx-1 my-1">Edit</a>
                                             <a href="/deleteProperty/{{ $property->id }}"

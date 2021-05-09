@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/more-info', function () {
-    return view('single-place');
-});
+Route::get('/more-info/{id}', [PropertyController::class, 'index'])->name('more-info');
 
 Route::get('/result', function () {
     return view('multi-rooms');
@@ -48,3 +46,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/deleteProperty/{id}', [Pr
 Route::middleware(['auth:sanctum', 'verified'])->get('/editProperty/{id}', [PropertyController::class, 'edit']);
 
 Route::middleware(['auth:sanctum', 'verified'])->post('/editProperty/{id}', [PropertyController::class, 'update'])->name('admin.updateprop');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/searchProperty', [PropertyController::class, 'search'])->name('admin.searchprop');

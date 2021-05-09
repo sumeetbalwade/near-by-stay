@@ -12,10 +12,10 @@
     <!-- Font-Awesome-Icons-CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     @include("components.head")
-    <link rel="stylesheet" type="text/css" href="assets/slick/datepicker.css" />
-    <link rel="stylesheet" href="assets/slick/tooplate-style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/datepicker.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/slick/tooplate-style.css') }}">
     <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/style-liberty.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style-liberty.css') }}">
 </head>
 
 <body>
@@ -230,16 +230,16 @@
         </div>
 
         <!-- load JS files -->
-        <script src="lib/js/jquery-2.2.3.min.js"></script> <!-- jQuery (https://jquery.com/download/) -->
-        <script src="lib/js/popper.min.js"></script> <!-- https://popper.js.org/ -->
-        <script src="lib/js/bootstrap.js"></script> <!-- https://getbootstrap.com/ -->
-        <script src="lib/js/datepicker.min.js"></script> <!-- https://github.com/qodesmith/datepicker -->
-        <script src="lib/js/jquery.singlePageNav.min.js"></script>
+        <script src="{{ asset('lib/js/jquery-2.2.3.min.js') }}"></script>
+        <!-- jQuery (https://jquery.com/download/) -->
+        <script src="{{ asset('lib/js/popper.min.js') }}"></script> <!-- https://popper.js.org/ -->
+        <script src="{{ asset('lib/js/bootstrap.js') }}"></script> <!-- https://getbootstrap.com/ -->
+        <script src="{{ asset('lib/js/datepicker.min.js') }}"></script>
+        <!-- https://github.com/qodesmith/datepicker -->
+        <script src="{{ asset('lib/js/jquery.singlePageNav.min.js') }}"></script>
 
         <script>
-
-
-            $(document).ready(function () {
+            $(document).ready(function() {
 
 
                 // Date Picker
@@ -267,16 +267,16 @@
                             <input type="radio" name="slides" id="slides_4" />
                             <ul class="banner_slide_bg">
                                 <li>
-                                    <img class="img" src="assets/images/slide1.jpg" alt="">
+                                    <img class="img" src="{{ asset('assets/images/slide1.jpg') }}" alt="">
                                 </li>
                                 <li>
-                                    <img class="img" src="assets/images/slide4.jpg" alt="">
+                                    <img class="img" src="{{ asset('assets/images/slide4.jpg') }}" alt="">
                                 </li>
                                 <li>
-                                    <img class="img" src="assets/images/slide2.jpg" alt="">
+                                    <img class="img" src="{{ asset('assets/images/slide2.jpg') }}" alt="">
                                 </li>
                                 <li>
-                                    <img class="img" src="assets/images/slide3.jpg" alt="">
+                                    <img class="img" src="{{ asset('assets/images/slide3.jpg') }}" alt="">
                                 </li>
                             </ul>
                             <div class="arrows">
@@ -296,11 +296,12 @@
                         </div>
                     </div>
                     <div class="content-photo-left text-center" style="width: 20vw;justify-self: center;">
-                        <h4>One Tree Farm</h4>
-                        <h6>Pune , Maharashtra</h6>
+                        <h4>{{ $property->name }}</h4>
+                        <h6>{{ $property->location }}</h6>
+                        <h6>{{ $property->city }} , {{ $property->state }}</h6>
                         <div class="border-line">
                             <div class="bg">
-                                <span class="price">₹ 6240</span>
+                                <span class="price">₹ {{ $property->price }}</span>
                                 <p> Only</p>
                             </div>
                             <div class="book-btn px-2">
@@ -309,8 +310,15 @@
                         </div>
                         <ul class="room-amenities">
                             <li><a href="#url"><span class="fa fa-beer"></span> Entire Villa</a></li>
-                            <li><a href="#url"><span class="fa fa-users"></span> 2 Guests</a></li>
-                            <li><a href="#url"><span class="fa fa-bed"></span> Double Bed</a></li>
+                            @if ($property->gc > 0)
+
+                                <li><a href="#"><span class="fa fa-users"></span> {{ $property->gc }} Guests</a></li>
+                            @endif
+
+                            @if ($property->nob > 0)
+
+                                <li><a href="#url"><span class="fa fa-bed"></span> {{ $property->nob }} Bed</a></li>
+                            @endif
                         </ul>
                         <a href="room.html" class="back"> <span class="fa fa-long-arrow-left"></span> Back to all
                             rooms</a>
@@ -324,20 +332,14 @@
         <div class="container py-sm-4">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-6">
-                    <img src="assets/images/rs1.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/images/rs1.jpg') }}" alt="" class="img-fluid">
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                    <img src="assets/images/rs2.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/images/rs2.jpg') }}" alt="" class="img-fluid">
                 </div>
                 <div class="col-lg-6 roomsingle mt-lg-0 mt-4">
-                    <h3 class="title-small">The Room</h3>
-                    <p class="roomsingle mt-3">Duis nisi sapien, elementum finibus fermentum eget, aliquet leo. Mauris
-                        hendrerit
-                        vel ex.
-                        Quisque vitae luctus massa. Phasellus sed aliquam leo. Vestibulum ullamcorper a massa eu
-                        fringilla.
-                        Integer ultrices finibus sed nisi.
-                        in convallis felis dapibus sit amet.</p>
+                    <h3 class="title-small">About</h3>
+                    <p class="roomsingle mt-3">{{ $property->description }}</p>
                 </div>
             </div>
         </div>
@@ -346,28 +348,30 @@
         <div class="container py-sm-4">
             <div class="row">
                 <div class="col-lg-7 roomsingle">
-                    <h3 class="title-small">Amenities provided by our hotel</h3>
+                    <h3 class="title-small">Amenities provided by the Place</h3>
                     <ul class="w3l-right-book mt-4">
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Flat screen TV</a></li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Free high-speed WiFi</a>
-                        </li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Private Bathroom</a></li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Free parking space</a>
-                        </li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Early Check-in</a></li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Swimming pool</a></li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Air-conditioning</a></li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Welcome treatment</a></li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Barrier-free rain
-                                shower</a></li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Aesop bath amenities</a>
-                        </li>
-                        <li><a hef="#url"><span class="fa fa-check" aria-hidden="true"></span>Bike rental facility</a>
-                        </li>
+                        @php
+                            $aminities = ['television', 'wifi', 'air-conditioner', 'free-breakfast', 'free-cancellation', 'ensuite-bathroom', 'swimming-pool', 'lawn', 'valley-view', 'lake-view', 'pets-allowed', 'alcohol-allowed', 'bonfire', 'parking', 'genset', 'towels-and-toiletries', 'inverter', 'bedroom-and-laundry', 'essentials', 'towels', 'bed-sheets', 'soap-and-toilet-paper', 'hanger', 'CCTV-cameras', 'first-aid-kit', 'fire-extinguisher', 'kitchen', 'microwave', 'refrigerator', 'dishes-and-silverware', 'space-where-guests-can-cook-their-own-meals'];
+                            
+                        @endphp
+
+                        @foreach ($aminities as $item)
+                            @if ($property->$item)
+
+                                <li>
+                                    <a hef="#"><span class="fa fa-check"
+                                            aria-hidden="true"></span>{{ $item }}</a>
+                                </li>
+                            @endif
+                        @endforeach
+
+
+
+
                     </ul>
                 </div>
                 <div class="col-lg-5 mt-lg-0 mt-4">
-                    <img src="assets/images/facilities.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/images/facilities.jpg') }}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -376,24 +380,28 @@
     <div id="map"></div>
     <script>
         function initMap() {
-            var location = { lat: -25.363, lng: 131.044 };
+            var location = {
+                lat: -25.363,
+                lng: 131.044
+            };
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 2,
                 center: location
 
             })
         }
+
     </script>
 
     @include('components.footer')
 
     <!-- Template JavaScript -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 
-    <script src="assets/js/owl.carousel.js"></script>
+    <script src="{{ asset('assets/js/owl.carousel.js') }}"></script>
     <!-- script for banner slider-->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.owl-one').owlCarousel({
                 loop: true,
                 margin: 0,
@@ -423,12 +431,13 @@
                 }
             })
         })
+
     </script>
     <!-- //script -->
 
     <!-- script for owlcarousel -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.owl-testimonial').owlCarousel({
                 loop: true,
                 margin: 0,
@@ -458,11 +467,12 @@
                 }
             })
         })
+
     </script>
     <!-- //script for owlcarousel -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.popup-with-zoom-anim').magnificPopup({
                 type: 'inline',
 
@@ -495,25 +505,36 @@
                 mainClass: 'my-mfp-slide-bottom'
             });
         });
+
     </script>
 
 
     <!-- disable body scroll which navbar is in active -->
     <script>
-        $(function () {
-            $('.navbar-toggler').click(function () {
+        $(function() {
+            $('.navbar-toggler').click(function() {
                 $('body').toggleClass('noscroll');
             })
         });
+
     </script>
     <!-- disable body scroll which navbar is in active -->
 
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 
 
 
     <div id="v-w3layouts"></div>
-    <script>(function (v, d, o, ai) { ai = d.createElement('script'); ai.defer = true; ai.async = true; ai.src = v.location.protocol + o; d.head.appendChild(ai); })(window, document, '../../../../../../../a.vdo.ai/core/v-w3layouts/vdo.ai.js');</script>
+    <script>
+        (function(v, d, o, ai) {
+            ai = d.createElement('script');
+            ai.defer = true;
+            ai.async = true;
+            ai.src = v.location.protocol + o;
+            d.head.appendChild(ai);
+        })(window, document, '../../../../../../../a.vdo.ai/core/v-w3layouts/vdo.ai.js');
+
+    </script>
 </body>
 
 </html>
