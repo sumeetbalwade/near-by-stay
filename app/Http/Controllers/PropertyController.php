@@ -34,7 +34,7 @@ class PropertyController extends Controller
     {
         if ($request->has('query')) {
             $query = $request->get('query');
-            $result = Property::where('name', 'like', '%' . $query . '%')->orWhere('location', 'like', '%' . $query . '%')->get();
+            $result = Property::where('name', 'like', '%' . $query . '%')->orWhere('location', 'like', '%' . $query . '%')->take(10)->get();
 
             return response()->json(['data' => $result]);
         } else {
@@ -127,7 +127,7 @@ class PropertyController extends Controller
 
         $property->save();
         $message = 'Property with id ' . $property->id . ' is Added Successfully ';
-        return back()->with('success', $message);
+        return view('admin.addimage', ['pno' => $property->id, 'pname' => $property->name])->with('success', $message);
     }
 
     /**

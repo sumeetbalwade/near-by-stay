@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,6 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/editProperty/{id}', [Pro
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/searchProperty', [PropertyController::class, 'search'])->name('admin.searchprop');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/addimage', [ImageController::class, 'store'])->name('admin.addimagepost');
