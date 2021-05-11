@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [GeneralController::class, 'index'])->name('home');
 
 Route::get('/more-info/{id}', [PropertyController::class, 'index'])->name('more-info');
 
@@ -59,3 +59,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/displayimage/{id}', [Imag
 
 
 Route::middleware(['auth:sanctum', 'verified'])->post('/editimage', [ImageController::class, 'edit'])->name('admin.editimage');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/editgallery', [GalleryController::class, 'index'])->name('admin.showgalleryimg');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/editgallery', [GalleryController::class, 'store'])->name('admin.editgalleryimg');
