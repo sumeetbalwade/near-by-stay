@@ -53,3 +53,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/searchProperty', [Propert
 
 
 Route::middleware(['auth:sanctum', 'verified'])->post('/addimage', [ImageController::class, 'store'])->name('admin.addimagepost');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/displayimage/{id}', [ImageController::class, 'show'])->name('admin.displayimage');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/editimage', [ImageController::class, 'edit'])->name('admin.editimage');

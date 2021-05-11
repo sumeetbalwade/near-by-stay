@@ -261,36 +261,40 @@
                     justify-self: center;
                 ">
                         <div class="csslider infinity" id="slider1">
-                            <input type="radio" name="slides" checked="checked" id="slides_1" />
-                            <input type="radio" name="slides" id="slides_2" />
-                            <input type="radio" name="slides" id="slides_3" />
-                            <input type="radio" name="slides" id="slides_4" />
+
+                            @for ($i = 1; $i <= count($slider); $i++)
+
+                                @if ($i == 1) <input type="radio"
+                                name="slides" checked="checked"
+                                id="slides_{{ $i }}" />
+
+                            @else
+                                <input type="radio" name="slides"
+                                id="slides_{{ $i }}"/> @endif
+
+
+                            @endfor
                             <ul class="banner_slide_bg">
-                                <li>
-                                    <img class="img" src="{{ asset('assets/images/slide1.jpg') }}" alt="">
-                                </li>
-                                <li>
-                                    <img class="img" src="{{ asset('assets/images/slide4.jpg') }}" alt="">
-                                </li>
-                                <li>
-                                    <img class="img" src="{{ asset('assets/images/slide2.jpg') }}" alt="">
-                                </li>
-                                <li>
-                                    <img class="img" src="{{ asset('assets/images/slide3.jpg') }}" alt="">
-                                </li>
+
+                                @foreach ($slider as $slide)
+
+                                    <li>
+                                        <img class="img" src="{{ asset('images/' . $slide->name) }}" alt="">
+                                    </li>
+                                @endforeach
+
                             </ul>
                             <div class="arrows">
-                                <label for="slides_1"></label>
-                                <label for="slides_2"></label>
-                                <label for="slides_3"></label>
-                                <label for="slides_4"></label>
+                                @for ($i = 1; $i <= count($slider); $i++)
+                                    <label for="slides_{{ $i }}"></label>
+                                @endfor
                             </div>
                             <div class="navigation">
                                 <div>
-                                    <label for="slides_1"></label>
-                                    <label for="slides_2"></label>
-                                    <label for="slides_3"></label>
-                                    <label for="slides_4"></label>
+                                    @for ($i = 1; $i <= count($slider); $i++)
+                                        <label for="slides_{{ $i }}"></label>
+                                    @endfor
+
                                 </div>
                             </div>
                         </div>
@@ -332,10 +336,10 @@
         <div class="container py-sm-4">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-6">
-                    <img src="{{ asset('assets/images/rs1.jpg') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('images/' . $ipi1->name) }}" alt="" class="img-fluid">
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                    <img src="{{ asset('assets/images/rs2.jpg') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('images/' . $ipi2->name) }}" alt="" class="img-fluid">
                 </div>
                 <div class="col-lg-6 roomsingle mt-lg-0 mt-4">
                     <h3 class="title-small">About</h3>
@@ -371,7 +375,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-5 mt-lg-0 mt-4">
-                    <img src="{{ asset('assets/images/facilities.jpg') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('images/' . $ipi3->name) }}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>

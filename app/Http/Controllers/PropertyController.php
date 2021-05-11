@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Property;
 use Illuminate\Http\Request;
+
+use function PHPUnit\Framework\fileExists;
 
 class PropertyController extends Controller
 {
@@ -16,7 +19,13 @@ class PropertyController extends Controller
     {
 
         $property = Property::find($id);
-        return view('single-place', ['property' => $property]);
+        $single = ['thumbnail', 'ipi1', 'ipi2', 'ipi3'];
+        $ipi1 = Image::where('pno', $id)->where('name', 'like', '%' . $single[1] . '%')->first();
+        $ipi2 = Image::where('pno', $id)->where('name', 'like', '%' . $single[2] . '%')->first();
+        $ipi3 = Image::where('pno', $id)->where('name', 'like', '%' . $single[3] . '%')->first();
+        $slider = Image::where('pno', $id)->where('name', 'like', '%slider%')->get();
+
+        return view('single-place', ['property' => $property, 'ipi1' => $ipi1, 'ipi2' => $ipi2, 'ipi3' => $ipi3, 'slider' => $slider]);
     }
 
     /**
@@ -238,7 +247,7 @@ class PropertyController extends Controller
 
         $property->save();
         $message = 'Property with id ' . $property->id . ' is Updated Successfully ';
-        return redirect(route('admin.viewallprop'))->with('edited', $message);
+        return redirect(route('admin.displayimage', [$property->id]))->with('success', $message);
     }
 
     /**
@@ -250,6 +259,16 @@ class PropertyController extends Controller
     public function destroy(Property $property, $id)
     {
         Property::destroy(['id' => $id]);
+        $images = Image::where('pno', $id)->get();
+
+        foreach ($images as $img) {
+            if (fileExists(public_path('images/') . $img->name)) {
+
+                unlink(public_path('images/') . $img->name);
+            }
+        }
+        Image::where('pno', $id)->delete();
+
         $message = 'Property with id ' . $id . ' is Deleted Successfully ';
         return back()->with('success', $message);
     }
