@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("#location").on("keyup", function () {
         var query = $(this).val();
         console.log(query);
-        if (query.length >= 3) {
+        if (query.length > 0) {
             $.ajax({
                 url: "/getsearch",
                 data: {
@@ -19,20 +19,23 @@ $(document).ready(function () {
 
                     var h = "";
                     $.each(da, function (index, property) {
-                        console.log(property);
-
                         h += "<a ";
                         h += "href='#'";
                         h += "class=";
-                        h += "'list-group-item list-group-item-action'";
-                        h += ">";
-                        h += property.location;
-                        h += "      </a>";
+                        h += "'list-group-item list-group-item-action ser-opt'";
+                        h += ">" + property.location + "</a>";
                     });
 
                     $(".search-list").html(h);
                 },
             });
+        } else {
+            $(".search-list").html("");
         }
+    });
+
+    $(document).on("click", ".ser-opt", function () {
+        $("#location").val($(this).text());
+        $(".search-list").html("");
     });
 });
