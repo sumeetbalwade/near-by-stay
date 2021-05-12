@@ -63,3 +63,6 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/editimage', [ImageContro
 Route::middleware(['auth:sanctum', 'verified'])->get('/editgallery', [GalleryController::class, 'index'])->name('admin.showgalleryimg');
 
 Route::middleware(['auth:sanctum', 'verified'])->post('/editgallery', [GalleryController::class, 'store'])->name('admin.editgalleryimg');
+
+
+Route::get('/getsearch', [PropertyController::class, 'search'])->name('admin.getsearch');

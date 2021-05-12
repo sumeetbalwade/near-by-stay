@@ -1,0 +1,3 @@
+$(function () {
+    $("#check-in").datepicker();
+});
