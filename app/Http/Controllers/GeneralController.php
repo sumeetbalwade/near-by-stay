@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\gallery;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class GeneralController extends Controller
@@ -22,7 +23,39 @@ class GeneralController extends Controller
 
     public function searchResult(Request $request)
     {
-        return $request->all();
+        $this->validate($request, [
+            'location' => 'required',
+            'check-in' => 'required',
+            'check-out' => 'required',
+            'adult' => 'required',
+            'child' => 'required'
+        ]);
+
+
+        //check-in checkout date validation
+        $date = date_create_from_format("d-m-Y", $request->get('check-in'));
+        $now = strtotime(date_format($date, "Y/m/d"));
+        $date = date_create_from_format("d-m-Y", $request->get('check-out'));
+        $your_date = strtotime(date_format($date, "Y/m/d"));
+        $datediff = ($your_date - $now) / (60 * 60 * 24);
+
+        if ($datediff <= 0) {
+            return back();
+        } else {
+
+            $location = $request->get('location');
+            $result = Property::where('name', 'like', '%' . $location . '%')->orWhere('location', 'like', '%' . $location . '%')->paginate(10);
+            $sdata = [
+                'location' => $request->get('location'),
+                'check-in' => $request->get('check-in'),
+                'check-out' => $request->get('check-out'),
+                'adult' => $request->get('adult'),
+                'child' => $request->get('child'),
+                'ddate' => $datediff
+            ];
+            $request->session()->put('sdata', $sdata);
+            return view('multi-rooms', ['data' => $result]);
+        }
     }
 
     /**

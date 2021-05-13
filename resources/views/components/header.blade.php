@@ -5,7 +5,7 @@
 				<h1>
 					<a class="navbar-brand" href="/">
 						<i class="fab fa-500px"></i>Near By
-					</a>
+					</a>   
 				</h1>
 				<button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

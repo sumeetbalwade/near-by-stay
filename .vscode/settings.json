@@ -1,5 +1,7 @@
 {
     "editor.fontSize": 16,
     "editor.wordWrapColumn": 100,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "editor.formatOnSave": false,
+    "blade.format.enable": true
 }
