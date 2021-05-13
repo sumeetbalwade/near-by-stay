@@ -39,11 +39,24 @@ class PropertyController extends Controller
     }
 
 
-    public function search(Request $request)
+    public function searchhome(Request $request)
     {
         if ($request->has('query')) {
             $query = $request->get('query');
             $result = Property::where('name', 'like', '%' . $query . '%')->orWhere('location', 'like', '%' . $query . '%')->distinct('location')->take(10)->get('location');
+
+            return response()->json(['data' => $result]);
+        } else {
+
+            return view('admin.searchProperty');
+        }
+    }
+
+    public function search(Request $request)
+    {
+        if ($request->has('query')) {
+            $query = $request->get('query');
+            $result = Property::where('name', 'like', '%' . $query . '%')->orWhere('location', 'like', '%' . $query . '%')->take(10)->get();
 
             return response()->json(['data' => $result]);
         } else {
