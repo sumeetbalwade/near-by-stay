@@ -43,7 +43,7 @@ class PropertyController extends Controller
     {
         if ($request->has('query')) {
             $query = $request->get('query');
-            $result = Property::where('name', 'like', '%' . $query . '%')->orWhere('location', 'like', '%' . $query . '%')->take(10)->get();
+            $result = Property::where('name', 'like', '%' . $query . '%')->orWhere('location', 'like', '%' . $query . '%')->distinct('location')->take(10)->get('location');
 
             return response()->json(['data' => $result]);
         } else {

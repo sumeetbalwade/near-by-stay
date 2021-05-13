@@ -133,6 +133,77 @@
             <p class="event-p">Goa</p>
         </div>
     </div>
+    <div class="row c-2">
+        <div class="cat_001" style="text-align: center">
+            <img
+                class="ls-is-cached lazyloaded"
+                alt="Farm Houses"
+                width="95"
+                height="95"
+                src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                style=""
+            />
+            <p class="event-p">Lonavala</p>
+        </div>
+
+        <div class="cat_001" style="text-align: center">
+            <img
+                class="ls-is-cached lazyloaded"
+                alt="Farm Houses"
+                width="95"
+                height="95"
+                src="https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                style=""
+            />
+            <p class="event-p">Khandala</p>
+        </div>
+
+        <div class="cat_001" style="text-align: center">
+            <img
+                class="ls-is-cached lazyloaded"
+                alt="Farm Houses"
+                width="95"
+                height="95"
+                src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                style=""
+            />
+            <p class="event-p">Pune</p>
+        </div>
+
+        <div class="cat_001" style="text-align: center">
+            <img
+                class="ls-is-cached lazyloaded"
+                alt="Farm Houses"
+                width="95"
+                height="95"
+                src="https://images.pexels.com/photos/60217/pexels-photo-60217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                style=""
+            />
+            <p class="event-p">Mumbai</p>
+        </div>
+        <div class="cat_001" style="text-align: center">
+            <img
+                class="ls-is-cached lazyloaded"
+                alt="Farm Houses"
+                width="95"
+                height="95"
+                src="https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                style=""
+            />
+            <p class="event-p">Nagpur</p>
+        </div>
+        <div class="cat_001" style="text-align: center">
+            <img
+                class="ls-is-cached lazyloaded"
+                alt="Farm Houses"
+                width="95"
+                height="95"
+                src="https://images.pexels.com/photos/872831/pexels-photo-872831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                style=""
+            />
+            <p class="event-p">Goa</p>
+        </div>
+    </div>
 
    </div>
        <script src="lib\js\nearby.js"></script>
