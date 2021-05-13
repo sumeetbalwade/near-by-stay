@@ -66,3 +66,6 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/editgallery', [GalleryCo
 
 
 Route::get('/getsearch', [PropertyController::class, 'search'])->name('admin.getsearch');
+
+
+Route::get('/search-result', [GeneralController::class, 'searchResult'])->name('admin.search-result');

@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $("#location").on("keyup", function () {
         var query = $(this).val();
-        console.log(query);
         if (query.length > 0) {
             $.ajax({
                 url: "/getsearch",

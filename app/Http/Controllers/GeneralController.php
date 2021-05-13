@@ -19,6 +19,12 @@ class GeneralController extends Controller
         return view('index', ['galleryh' => $galleryimgh, 'galleryv' => $galleryimgv]);
     }
 
+
+    public function searchResult(Request $request)
+    {
+        return $request->all();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
