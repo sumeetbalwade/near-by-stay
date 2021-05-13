@@ -18,7 +18,7 @@
                                 autocomplete="off" required />
 
                         </div>
-                        <div class="list-group search-list">
+                        <div class="list-group overflow-auto search-list">
 
                         </div>
                     </div>

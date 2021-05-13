@@ -25,9 +25,7 @@ Route::get('/result', function () {
     return view('multi-rooms');
 });
 
-Route::get('/test', function () {
-    return view('test');
-});
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.dashboard');
