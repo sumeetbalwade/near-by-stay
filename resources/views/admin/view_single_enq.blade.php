@@ -39,17 +39,7 @@
   </head>
 
   <body>
-    {{-- @if (!Session::has('sdata'))
-        <script>window.location = "/";</script>
-    @endif --}}
-    @php
-    $flag = 0;
-    if (Session::has('sdata')) {
-        $sdata = Session::get('sdata');
-        $flag = 1;
-    }
-    
-    @endphp
+
     <div
       class="bg-contact100"
       style="background-image: url('{{ asset('assets/enquiry/images/bg-01.jpg') }}')"
@@ -67,10 +57,9 @@
               </div>
             </div>
          
-          <form class="contact100-form" action="/getenquiry" method="POST">
-            @csrf
-            <span class="contact100-form-title"> Get in touch </span>
-            <input type="hidden" name="id" value="{{ $property->id }}">
+          <form class="contact100-form" >
+            <span class="contact100-form-title"> Enquiry # {{ $enquiry->id }} </span>
+            
             
 
             <div
@@ -81,7 +70,7 @@
                 class="input100"
                 type="text"
                 name="name"
-                placeholder="Name" required
+                placeholder="Name" value="{{ $enquiry->name }}" readonly
               />
               <span class="focus-input100"></span>
               <span class="symbol-input100">
@@ -97,7 +86,7 @@
                 class="input100"
                 type="text"
                 name="mobile_number"
-                placeholder="Mobile Number" required
+                placeholder="Mobile Number" value="{{ $enquiry->mobile }}" readonly
               />
               <span class="focus-input100"></span>
               <span class="symbol-input100">
@@ -112,7 +101,7 @@
                 class="input100"
                 type="text"
                 name="email"
-                placeholder="Email" required
+                placeholder="Email" value="{{ $enquiry->email }}" readonly
               />
               <span class="focus-input100"></span>
               <span class="symbol-input100">
@@ -126,7 +115,7 @@
                 class="input100"
                 type="text"
                 name="travel_with"
-                placeholder=" Travelling with" required
+                placeholder=" Travelling with" value="{{ $enquiry->travelling }}" readonly
               />
               <span class="focus-input100"></span>
               <span class="symbol-input100">
@@ -137,38 +126,31 @@
             <span class="contact100-form-title pt-4 pb-2"> Enquiry Details </span>
             <div class="row">
                 <div class="col-6" >
-                    <p>Property Name : <strong>{{ $property->name }}</strong></p>
+                    <p>Property Name : <strong>{{ $enquiry->pname }}</strong></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6" >
-                    @if ($flag == 1 && $sdata['check-in'] != '')
-                    <p>Check-in : <strong>{{ $sdata['check-in'] }}</strong></p>
-                    @endif    
+                    <p>Check-in : <strong>{{ $enquiry['check-in'] }}</strong></p>
                 </div>
                 <div class="col-6">
-                    @if ($flag == 1 && $sdata['check-out'] != '')
-                        <p>Check-out : <strong>{{ $sdata['check-out'] }}</strong></p>
-                    @endif  
+                        <p>Check-out : <strong>{{ $enquiry['check-out'] }}</strong></p>
+
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-6" >
-                    @if ($flag == 1 && $price)
-                    <p>Price : <strong>{{ $price }}</strong></p>
-                    @endif  
+                    <p>Price : <strong>{{ $enquiry['price'] }}</strong></p>
                 </div>
                 <div class="col-6">
-                    @if ($flag == 1 && $sdata['adult'] && $sdata['child'])
-                    <p>Guest : <strong>{{ $sdata['adult']}}A + {{ $sdata['child'] }}C</strong></p>
-                    @endif  
+                    <p>Guest : <strong>{{ $enquiry['adults']}}A + {{ $enquiry['child'] }}C</strong></p>
                 </div>
             </div>
 
             <div class="container-contact100-form-btn">
-              <button type="submit" class="contact100-form-btn">Submit</button>
-            </div>
+                <a class="contact100-form-btn" href="{{ route('admin.viewAllEnquiries') }}">Back</a>
+              </div>
           </form>
         </div>
       </div>

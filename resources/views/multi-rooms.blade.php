@@ -162,7 +162,7 @@
                                                 style="width: auto">
                                                 <option value="">C</option>
                                                 @for ($i = 0; $i <= 3; $i++)
-                                                    @if ($i == $sdata['adult']) <option selected
+                                                    @if ($i == $sdata['child']) <option selected
                                                     value="{{ $i }}">{{ $i }}</option>
 
                                                 @else

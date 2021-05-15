@@ -83,11 +83,12 @@ class GeneralController extends Controller
     public function enquiry(Request $request, $id)
     {
        
-        if(!$request->session()->has('sdata') && !$request->session()->has('price')){
+        if(!$request->session()->has('sdata') ){
             return back();
         }
         $property = Property::find($id);
         $price = $property->price;
+        
         return view('enquiry',['property' => $property,'price' => $price]);
     }
 

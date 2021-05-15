@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\ImageController;
@@ -71,4 +72,20 @@ Route::get('/search-result', [GeneralController::class, 'searchResult'])->name('
 
 
 Route::get('/enquiry/{id}', [GeneralController::class,'enquiry'])->name('enquiry');
-Route::post('/getenquiry', [GeneralController::class,'store']);
+Route::post('/getenquiry', [EnquiryController::class,'store']);
+
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/viewAllEnquiries', [EnquiryController::class, 'index'])->name('admin.viewAllEnquiries');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/deleteEnquiry/{id}', [EnquiryController::class, 'destroy']);
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/viewSingleEnq/{id}', [EnquiryController::class, 'show']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/searchEnquiries', function(){
+    return view('admin.searchEnquiry');
+})->name('admin.searchEnq');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/searchEnquiriesRes', [EnquiryController::class, 'search']);

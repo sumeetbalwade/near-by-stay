@@ -141,6 +141,30 @@
 
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Enquiry
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.viewAllEnquiries') }}" id="allenq" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View All Enquiry</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.searchEnq') }}" class="nav-link" id="searchenq">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Search Enquiry</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
 
                         <li class="nav-item">
                             <a href="{{ route('admin.showgalleryimg') }}" id="gallerysection" class="nav-link ">
