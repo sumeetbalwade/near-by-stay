@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\gallery;
 use App\Models\Property;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class GeneralController extends Controller
@@ -76,7 +77,18 @@ class GeneralController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request->all();
+    }
+
+    public function enquiry(Request $request, $id)
+    {
+       
+        if(!$request->session()->has('sdata') && !$request->session()->has('price')){
+            return back();
+        }
+        $property = Property::find($id);
+        $price = $property->price;
+        return view('enquiry',['property' => $property,'price' => $price]);
     }
 
     /**

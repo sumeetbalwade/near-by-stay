@@ -52,6 +52,19 @@
                     <a href="/" class="nav-link">Home</a>
                 </li>
 
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" onclick="document.getElementById('log-out-fm').submit();" class="nav-link">Logout</a>
+                </li>
+                <form id="log-out-fm" method="POST" action="{{ route('logout') }}">
+                    @csrf
+    
+                    <button type="submit" style="display: none" class="hidden">
+                        {{ __('Log Out') }}
+                    </button>
+                </form>
+
+                
+
             </ul>
 
 

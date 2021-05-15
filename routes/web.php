@@ -67,3 +67,8 @@ Route::get('/getsearch', [PropertyController::class, 'searchhome'])->name('admin
 
 
 Route::get('/search-result', [GeneralController::class, 'searchResult'])->name('admin.search-result');
+
+
+
+Route::get('/enquiry/{id}', [GeneralController::class,'enquiry'])->name('enquiry');
+Route::post('/getenquiry', [GeneralController::class,'store']);

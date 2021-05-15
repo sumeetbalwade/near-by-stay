@@ -353,7 +353,7 @@
                                 <p> Only</p>
                             </div>
                             <div class="book-btn px-2">
-                                <a href="booking.html" class="btn btn-style btn-secondary mt-3">Enquire Now</a>
+                                <a href="/enquiry/{{ $property->id}} " class="btn btn-style btn-secondary mt-3">Enquire Now</a>
                             </div>
                         </div>
                         <ul class="room-amenities">
