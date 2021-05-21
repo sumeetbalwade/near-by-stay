@@ -25,7 +25,9 @@ Route::get('/more-info/{id}', [PropertyController::class, 'index'])->name('more-
 Route::get('/result', function () {
     return view('multi-rooms');
 });
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/test', function () {
+    return view('dashboard');
+})->name('test');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -89,3 +91,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/searchEnquiries', functio
 })->name('admin.searchEnq');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/searchEnquiriesRes', [EnquiryController::class, 'search']);
+
+Route::post('/filter', [PropertyController::class, 'filters'])->name('filter');

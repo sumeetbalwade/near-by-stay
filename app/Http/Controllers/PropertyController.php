@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Property;
+use GrahamCampbell\ResultType\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use function PHPUnit\Framework\fileExists;
 
@@ -50,6 +52,67 @@ class PropertyController extends Controller
 
             return view('admin.searchProperty');
         }
+    }
+
+    public function filters(Request $request)
+    {
+        
+        if ($request->session()->has('sdata')) {
+            $sdata =  $request->session()->get('sdata');
+            $location = $sdata['location'];
+            
+            $result = Property::where('name', 'like', '%' . $location . '%')->orWhere('location', 'like', '%' . $location . '%');
+
+            $property_type = ['Villa', 'HomeStay', 'Resort', 'Cottage', 'Service Apartment', 'FarmHouse', 'Bungalow'];
+            $p = array();
+            foreach ($property_type as $prop) {
+                if ($request->has($prop)) {
+                    array_push($p,$prop);
+                }
+            }
+
+            if (count($p) > 0) {
+                
+                $result->whereIn('type',$p);
+            }
+
+
+            //for aminities
+            $aminities = ['television', 'wifi', 'air-conditioner', 'free-breakfast', 'free-cancellation', 'swimming-pool', 'pets-allowed', 'parking'];
+            $am = array();
+            foreach ($aminities as $prop) {
+                if ($request->has($prop)) {
+                    array_push($am,$prop);
+                    $result->where($prop, true);
+                }
+            }
+
+            //for holiday mood
+            $hm = ['bc','fg','ce','ac','cp','ws'];
+            foreach ($hm as $prop) {
+                if ($request->has($prop)) {
+                    $result->where($prop, true);
+                }
+            }
+
+
+            if ($request->get('sort') == 'HL') {
+                $result->orderBy('price','DESC');
+            }else if ($request->get('sort') == 'LH'){
+                $result->orderBy('price','ASC');
+
+            } 
+
+            if ($request->has('min') && $request->has('max')) {
+                $min = $request->get('min');
+                $max = $request->get('max');
+                $result->whereBetween('price', [$min, $max]);
+            }
+            $res = $result->paginate(10);
+            return view('multi-rooms',['data'=>$res,'am'=>$am]);
+        }
+        return redirect('/');
+
     }
 
     public function search(Request $request)

@@ -13180,3 +13180,7 @@ header .text-white{
     height: 10vh;
     width: 100%;
 }
+
+#filter label {
+  font-size: 12px;
+}
