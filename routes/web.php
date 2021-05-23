@@ -30,9 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/test', function () {
 })->name('test');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('admin.dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[GeneralController::class, 'show'])->name('dashboard');
 
 Route::get('/addproperty', function () {
     return view('admin.addproperty');

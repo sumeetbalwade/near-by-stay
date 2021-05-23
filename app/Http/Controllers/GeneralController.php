@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\enquiry;
 use App\Models\gallery;
 use App\Models\Property;
+use Carbon\Carbon;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
@@ -98,9 +100,16 @@ class GeneralController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+
+        $all_prop = Property::count();
+        $today_prop = Property::whereDate('created_at', Carbon::today())->count();
+
+        $all_enq = enquiry::count();
+        $today_enq = enquiry::whereDate('created_at', Carbon::today())->count();
+
+        return view('admin.dashboard',['all_prop'=>$all_prop,'today_prop'=>$today_prop,'all_enq'=>$all_enq,'today_enq'=>$today_enq]);
     }
 
     /**
