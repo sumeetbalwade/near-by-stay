@@ -14,10 +14,10 @@
 
 
     @include("components.nearbyplace")
+    @include("components.selectorhome")
 
     @include("components.celebrates")
 
-    @include("components.selectorhome")
 
     @include("components.bestplace")
 
@@ -63,7 +63,7 @@
 </style>
 <a href="https://wa.me/+918888987679" class="whatsapp_float d-flex justify-content-center align-items-center" target="_blank"> <i class="fab fa-whatsapp"></i></a>
 
-   
+
     {{-- <!-- gallery light box -->
     <script src="lib/js/smoothbox.jquery2.js"></script>
     <!-- //gallery light box --> --}}
